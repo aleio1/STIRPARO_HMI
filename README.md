@@ -1,0 +1,1 @@
+# STIRPARO_HMI
