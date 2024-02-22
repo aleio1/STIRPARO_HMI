@@ -114,10 +114,6 @@ namespace STIRPARO
             }
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void connectButton_Click(object sender, EventArgs e)
         {
@@ -498,15 +494,6 @@ namespace STIRPARO
 #endif
         }
 
-        private void straightenerPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void profilingPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void aspoVelUpDown_ValueChanged(object sender, EventArgs e)
         {

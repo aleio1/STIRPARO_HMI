@@ -88,7 +88,6 @@ namespace STIRPARO
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(2208, 657);
             this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // aspoPanel
             // 
@@ -119,70 +118,78 @@ namespace STIRPARO
             // aspoLabel
             // 
             this.aspoLabel.AutoSize = true;
-            this.aspoLabel.Location = new System.Drawing.Point(4, 4);
+            this.aspoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aspoLabel.Location = new System.Drawing.Point(238, 4);
             this.aspoLabel.Name = "aspoLabel";
-            this.aspoLabel.Size = new System.Drawing.Size(46, 17);
+            this.aspoLabel.Size = new System.Drawing.Size(116, 39);
             this.aspoLabel.TabIndex = 11;
             this.aspoLabel.Text = "ASPO";
             // 
             // aspoCloseButton
             // 
+            this.aspoCloseButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoCloseButton.Location = new System.Drawing.Point(465, 35);
             this.aspoCloseButton.Name = "aspoCloseButton";
             this.aspoCloseButton.Size = new System.Drawing.Size(100, 100);
             this.aspoCloseButton.TabIndex = 10;
             this.aspoCloseButton.Text = "CLOSE";
-            this.aspoCloseButton.UseVisualStyleBackColor = true;
+            this.aspoCloseButton.UseVisualStyleBackColor = false;
             this.aspoCloseButton.Click += new System.EventHandler(this.aspoCloseButton_Click);
-            this.aspoCloseButton.MouseDown += this.aspoCloseButton_MouseDown;
-            this.aspoCloseButton.MouseUp += this.aspoCloseButton_MouseUp;
+            this.aspoCloseButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoCloseButton_MouseDown);
+            this.aspoCloseButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoCloseButton_MouseUp);
             // 
             // aspoOpenButton
             // 
+            this.aspoOpenButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoOpenButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoOpenButton.Location = new System.Drawing.Point(17, 35);
             this.aspoOpenButton.Name = "aspoOpenButton";
             this.aspoOpenButton.Size = new System.Drawing.Size(100, 100);
             this.aspoOpenButton.TabIndex = 9;
             this.aspoOpenButton.Text = "OPEN";
-            this.aspoOpenButton.UseVisualStyleBackColor = true;
+            this.aspoOpenButton.UseVisualStyleBackColor = false;
             this.aspoOpenButton.Click += new System.EventHandler(this.aspoOpenButton_Click);
-            this.aspoOpenButton.MouseDown += this.aspoOpenButton_MouseDown;
-            this.aspoOpenButton.MouseUp += this.aspoOpenButton_MouseUp;
+            this.aspoOpenButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoOpenButton_MouseDown);
+            this.aspoOpenButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoOpenButton_MouseUp);
             // 
             // aspoBackwardButton
             // 
+            this.aspoBackwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoBackwardButton.Image")));
+            this.aspoBackwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.aspoBackwardButton.Location = new System.Drawing.Point(17, 453);
             this.aspoBackwardButton.Name = "aspoBackwardButton";
             this.aspoBackwardButton.Size = new System.Drawing.Size(100, 100);
             this.aspoBackwardButton.TabIndex = 8;
             this.aspoBackwardButton.Text = "INDIETRO";
             this.aspoBackwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.aspoBackwardButton.UseVisualStyleBackColor = true;
+            this.aspoBackwardButton.UseVisualStyleBackColor = false;
             this.aspoBackwardButton.Click += new System.EventHandler(this.aspoBackwardButton_Click);
-            this.aspoBackwardButton.MouseDown += this.aspoBackwardButton_MouseDown;
-            this.aspoBackwardButton.MouseUp += this.aspoBackwardButton_MouseUp;
+            this.aspoBackwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoBackwardButton_MouseDown);
+            this.aspoBackwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoBackwardButton_MouseUp);
             // 
             // aspoForwardButton
             // 
+            this.aspoForwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoForwardButton.Image")));
+            this.aspoForwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.aspoForwardButton.Location = new System.Drawing.Point(474, 453);
             this.aspoForwardButton.Name = "aspoForwardButton";
             this.aspoForwardButton.Size = new System.Drawing.Size(100, 100);
             this.aspoForwardButton.TabIndex = 7;
             this.aspoForwardButton.Text = "AVANTI";
             this.aspoForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.aspoForwardButton.UseVisualStyleBackColor = true;
+            this.aspoForwardButton.UseVisualStyleBackColor = false;
             this.aspoForwardButton.Click += new System.EventHandler(this.aspoForwardButton_Click);
-            this.aspoForwardButton.MouseDown += this.aspoForwardButton_MouseDown;
-            this.aspoForwardButton.MouseUp += this.aspoForwardButton_MouseUp;
+            this.aspoForwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoForwardButton_MouseDown);
+            this.aspoForwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoForwardButton_MouseUp);
             // 
             // aspoUpButton
             // 
+            this.aspoUpButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoUpButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoUpButton.Image")));
             this.aspoUpButton.Location = new System.Drawing.Point(245, 125);
@@ -192,13 +199,14 @@ namespace STIRPARO
             this.aspoUpButton.Text = "UP";
             this.aspoUpButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.aspoUpButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.aspoUpButton.UseVisualStyleBackColor = true;
+            this.aspoUpButton.UseVisualStyleBackColor = false;
             this.aspoUpButton.Click += new System.EventHandler(this.aspoUpButton_Click);
-            this.aspoUpButton.MouseDown += this.aspoUpButton_MouseDown;
-            this.aspoUpButton.MouseUp += this.aspoUpButton_MouseUp;
+            this.aspoUpButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoUpButton_MouseDown);
+            this.aspoUpButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoUpButton_MouseUp);
             // 
             // aspoLeftButton
             // 
+            this.aspoLeftButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoLeftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoLeftButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoLeftButton.Image")));
             this.aspoLeftButton.Location = new System.Drawing.Point(139, 231);
@@ -208,13 +216,14 @@ namespace STIRPARO
             this.aspoLeftButton.Text = "LEFT";
             this.aspoLeftButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.aspoLeftButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.aspoLeftButton.UseVisualStyleBackColor = true;
+            this.aspoLeftButton.UseVisualStyleBackColor = false;
             this.aspoLeftButton.Click += new System.EventHandler(this.aspoLeftButton_Click);
-            this.aspoLeftButton.MouseDown += this.aspoLeftButton_MouseDown;
-            this.aspoLeftButton.MouseUp += this.aspoLeftButton_MouseUp;
+            this.aspoLeftButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoLeftButton_MouseDown);
+            this.aspoLeftButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoLeftButton_MouseUp);
             // 
             // aspoRightButton
             // 
+            this.aspoRightButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoRightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoRightButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoRightButton.Image")));
             this.aspoRightButton.Location = new System.Drawing.Point(345, 231);
@@ -224,13 +233,14 @@ namespace STIRPARO
             this.aspoRightButton.Text = "RIGHT";
             this.aspoRightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.aspoRightButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.aspoRightButton.UseVisualStyleBackColor = true;
+            this.aspoRightButton.UseVisualStyleBackColor = false;
             this.aspoRightButton.Click += new System.EventHandler(this.aspoRightButton_Click);
-            this.aspoRightButton.MouseDown += this.aspoRightButton_MouseDown;
-            this.aspoRightButton.MouseUp += this.aspoRightButton_MouseUp;
+            this.aspoRightButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoRightButton_MouseDown);
+            this.aspoRightButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoRightButton_MouseUp);
             // 
             // aspoDownButton
             // 
+            this.aspoDownButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.aspoDownButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoDownButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoDownButton.Image")));
             this.aspoDownButton.Location = new System.Drawing.Point(245, 335);
@@ -240,10 +250,10 @@ namespace STIRPARO
             this.aspoDownButton.Text = "DOWN";
             this.aspoDownButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.aspoDownButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.aspoDownButton.UseVisualStyleBackColor = true;
+            this.aspoDownButton.UseVisualStyleBackColor = false;
             this.aspoDownButton.Click += new System.EventHandler(this.aspoDownButton_Click);
-            this.aspoDownButton.MouseDown += this.aspoDownButton_MouseDown;
-            this.aspoDownButton.MouseUp += this.aspoDownButton_MouseUp;
+            this.aspoDownButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.aspoDownButton_MouseDown);
+            this.aspoDownButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.aspoDownButton_MouseUp);
             // 
             // straightenerPanel
             // 
@@ -257,7 +267,6 @@ namespace STIRPARO
             this.straightenerPanel.Name = "straightenerPanel";
             this.straightenerPanel.Size = new System.Drawing.Size(420, 600);
             this.straightenerPanel.TabIndex = 1;
-            this.straightenerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.straightenerPanel_Paint);
             // 
             // straightenerVelUpDown
             // 
@@ -269,41 +278,46 @@ namespace STIRPARO
             // straightenerLabel
             // 
             this.straightenerLabel.AutoSize = true;
-            this.straightenerLabel.Location = new System.Drawing.Point(4, 4);
+            this.straightenerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.straightenerLabel.Location = new System.Drawing.Point(44, 4);
             this.straightenerLabel.Name = "straightenerLabel";
-            this.straightenerLabel.Size = new System.Drawing.Size(127, 17);
+            this.straightenerLabel.Size = new System.Drawing.Size(333, 39);
             this.straightenerLabel.TabIndex = 12;
             this.straightenerLabel.Text = "RADDRIZZATRICE";
             // 
             // straightenerBackwardButton
             // 
+            this.straightenerBackwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.straightenerBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.straightenerBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightenerBackwardButton.Image")));
+            this.straightenerBackwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.straightenerBackwardButton.Location = new System.Drawing.Point(9, 453);
             this.straightenerBackwardButton.Name = "straightenerBackwardButton";
             this.straightenerBackwardButton.Size = new System.Drawing.Size(100, 100);
             this.straightenerBackwardButton.TabIndex = 14;
             this.straightenerBackwardButton.Text = "INDIETRO";
             this.straightenerBackwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.straightenerBackwardButton.UseVisualStyleBackColor = true;
+            this.straightenerBackwardButton.UseVisualStyleBackColor = false;
             this.straightenerBackwardButton.Click += new System.EventHandler(this.straightenerBackwardButton_Click);
-            this.straightenerBackwardButton.MouseDown += this.straightenerBackwardButton_MouseDown;
-            this.straightenerBackwardButton.MouseUp += this.straightenerBackwardButton_MouseUp;
+            this.straightenerBackwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.straightenerBackwardButton_MouseDown);
+            this.straightenerBackwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.straightenerBackwardButton_MouseUp);
             // 
             // straightenerForwardButton
             // 
+            this.straightenerForwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.straightenerForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.straightenerForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightenerForwardButton.Image")));
+            this.straightenerForwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.straightenerForwardButton.Location = new System.Drawing.Point(310, 453);
             this.straightenerForwardButton.Name = "straightenerForwardButton";
             this.straightenerForwardButton.Size = new System.Drawing.Size(100, 100);
             this.straightenerForwardButton.TabIndex = 13;
             this.straightenerForwardButton.Text = "AVANTI";
             this.straightenerForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.straightenerForwardButton.UseVisualStyleBackColor = true;
+            this.straightenerForwardButton.UseVisualStyleBackColor = false;
             this.straightenerForwardButton.Click += new System.EventHandler(this.straightenerForwardButton_Click);
-            this.straightenerForwardButton.MouseDown += this.straightenerForwardButton_MouseDown;
-            this.straightenerForwardButton.MouseUp += this.straightenerForwardButton_MouseUp;
+            this.straightenerForwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.straightenerForwardButton_MouseDown);
+            this.straightenerForwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.straightenerForwardButton_MouseUp);
             // 
             // profilingPanel
             // 
@@ -317,7 +331,6 @@ namespace STIRPARO
             this.profilingPanel.Name = "profilingPanel";
             this.profilingPanel.Size = new System.Drawing.Size(420, 600);
             this.profilingPanel.TabIndex = 2;
-            this.profilingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.profilingPanel_Paint);
             // 
             // profilingVelUpDown
             // 
@@ -329,35 +342,46 @@ namespace STIRPARO
             // profilingLabel
             // 
             this.profilingLabel.AutoSize = true;
-            this.profilingLabel.Location = new System.Drawing.Point(4, 4);
+            this.profilingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profilingLabel.Location = new System.Drawing.Point(69, 4);
             this.profilingLabel.Name = "profilingLabel";
-            this.profilingLabel.Size = new System.Drawing.Size(106, 17);
+            this.profilingLabel.Size = new System.Drawing.Size(280, 39);
             this.profilingLabel.TabIndex = 13;
             this.profilingLabel.Text = "PROFILATRICE";
             // 
             // profilingBackwardButton
             // 
+            this.profilingBackwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.profilingBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profilingBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("profilingBackwardButton.Image")));
+            this.profilingBackwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.profilingBackwardButton.Location = new System.Drawing.Point(9, 453);
             this.profilingBackwardButton.Name = "profilingBackwardButton";
             this.profilingBackwardButton.Size = new System.Drawing.Size(100, 100);
             this.profilingBackwardButton.TabIndex = 17;
-            this.profilingBackwardButton.UseVisualStyleBackColor = true;
+            this.profilingBackwardButton.Text = "INDIETRO";
+            this.profilingBackwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.profilingBackwardButton.UseVisualStyleBackColor = false;
             this.profilingBackwardButton.Click += new System.EventHandler(this.profilingBackwardButton_Click);
-            this.profilingBackwardButton.MouseDown += this.profilingBackwardButton_MouseDown;
-            this.profilingBackwardButton.MouseUp += this.profilingBackwardButton_MouseUp;
+            this.profilingBackwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.profilingBackwardButton_MouseDown);
+            this.profilingBackwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.profilingBackwardButton_MouseUp);
             // 
             // profilingForwardButton
             // 
+            this.profilingForwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.profilingForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profilingForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("profilingForwardButton.Image")));
+            this.profilingForwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.profilingForwardButton.Location = new System.Drawing.Point(310, 453);
             this.profilingForwardButton.Name = "profilingForwardButton";
             this.profilingForwardButton.Size = new System.Drawing.Size(100, 100);
             this.profilingForwardButton.TabIndex = 16;
-            this.profilingForwardButton.UseVisualStyleBackColor = true;
+            this.profilingForwardButton.Text = "INDIETRO";
+            this.profilingForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.profilingForwardButton.UseVisualStyleBackColor = false;
             this.profilingForwardButton.Click += new System.EventHandler(this.profilingForwardButton_Click);
-            this.profilingForwardButton.MouseDown += this.profilingForwardButton_MouseDown;
-            this.profilingForwardButton.MouseUp += this.profilingForwardButton_MouseUp;
+            this.profilingForwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.profilingForwardButton_MouseDown);
+            this.profilingForwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.profilingForwardButton_MouseUp);
             // 
             // shearPanel
             // 
@@ -374,35 +398,48 @@ namespace STIRPARO
             // shearLabel
             // 
             this.shearLabel.AutoSize = true;
-            this.shearLabel.Location = new System.Drawing.Point(4, 4);
+            this.shearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shearLabel.Location = new System.Drawing.Point(118, 4);
             this.shearLabel.Name = "shearLabel";
-            this.shearLabel.Size = new System.Drawing.Size(58, 17);
+            this.shearLabel.Size = new System.Drawing.Size(153, 39);
             this.shearLabel.TabIndex = 14;
             this.shearLabel.Text = "CESOIA";
             // 
             // shearDownButton
             // 
+            this.shearDownButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.shearDownButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shearDownButton.Image = ((System.Drawing.Image)(resources.GetObject("shearDownButton.Image")));
+            this.shearDownButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.shearDownButton.Location = new System.Drawing.Point(310, 453);
             this.shearDownButton.Name = "shearDownButton";
             this.shearDownButton.Size = new System.Drawing.Size(100, 100);
             this.shearDownButton.TabIndex = 11;
-            this.shearDownButton.UseVisualStyleBackColor = true;
+            this.shearDownButton.Text = "GIÙ";
+            this.shearDownButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.shearDownButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shearDownButton.UseVisualStyleBackColor = false;
             this.shearDownButton.Click += new System.EventHandler(this.shearDownButton_Click);
-            this.shearDownButton.MouseDown += this.shearDownButton_MouseDown;
-            this.shearDownButton.MouseUp += this.shearDownButton_MouseUp;
+            this.shearDownButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shearDownButton_MouseDown);
+            this.shearDownButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.shearDownButton_MouseUp);
             // 
             // shearUpButton
             // 
+            this.shearUpButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.shearUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shearUpButton.Image = ((System.Drawing.Image)(resources.GetObject("shearUpButton.Image")));
+            this.shearUpButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.shearUpButton.Location = new System.Drawing.Point(9, 453);
             this.shearUpButton.Name = "shearUpButton";
             this.shearUpButton.Size = new System.Drawing.Size(100, 100);
             this.shearUpButton.TabIndex = 10;
-            this.shearUpButton.UseVisualStyleBackColor = true;
+            this.shearUpButton.Text = "SU";
+            this.shearUpButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.shearUpButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.shearUpButton.UseVisualStyleBackColor = false;
             this.shearUpButton.Click += new System.EventHandler(this.shearUpButton_Click);
-            this.shearUpButton.MouseDown += this.shearUpButton_MouseDown;
-            this.shearUpButton.MouseUp += this.shearUpButton_MouseUp;
+            this.shearUpButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.shearUpButton_MouseDown);
+            this.shearUpButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.shearUpButton_MouseUp);
             // 
             // aspoEnableButton
             // 
