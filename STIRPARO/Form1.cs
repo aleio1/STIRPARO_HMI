@@ -1,4 +1,4 @@
-﻿//#define STIRPARO
+﻿#define STIRPARO
 
 using System;
 using System.Collections.Generic;
@@ -27,6 +27,7 @@ namespace STIRPARO
         public Form1()
         {
             InitializeComponent();
+            creaoggetto();
         }
 
         public void creaoggetto()
@@ -158,14 +159,7 @@ namespace STIRPARO
             AGq.VARS.VAR_ASPO_AVANZA_COIL = 0;
 #endif
         }
-        private void aspoRightButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            AGq.VARS.VAR_ASPO_CENTRALINA_START = 1;
-            AGq.VARS.VAR_ASPO_AVANZA_COIL = 1;
-#endif
 
-        }
 
         private void aspoLeftButton_MouseDown(object sender, EventArgs e)
         {
@@ -184,20 +178,13 @@ namespace STIRPARO
             AGq.VARS.VAR_ASPO_INDIETRO_COIL = 0;
 #endif
         }
-        private void aspoLeftButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            AGq.VARS.VAR_ASPO_CENTRALINA_START = 1;
-            AGq.VARS.VAR_ASPO_INDIETRO_COIL = 1;
-#endif
-        }
 
 
         private void aspoForwardButton_MouseDown(object sender, EventArgs e)
         {
             aspoForwardButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER ASPO AVANTI
+            AGq.VARS.VAR_ASPO_RVS = 0;
             AGq.VARS.VAR_ASPO_START = 1;
 #endif
         }
@@ -206,23 +193,17 @@ namespace STIRPARO
         {
             aspoForwardButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER ASPO AVANTI
+            AGq.VARS.VAR_ASPO_RVS = 0;
             AGq.VARS.VAR_ASPO_START = 0;
 #endif
         }
-        private void aspoForwardButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER ASPO AVANTI
-            AGq.VARS.VAR_ASPO_START = 1;
-#endif
-        }
+
 
         private void aspoBackwardButton_MouseDown(object sender, EventArgs e)
         {
             aspoBackwardButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER ASPO INDIETRO
+            AGq.VARS.VAR_ASPO_RVS = 1;
             AGq.VARS.VAR_ASPO_START = 1;
 #endif
         }
@@ -231,17 +212,11 @@ namespace STIRPARO
         {
             aspoBackwardButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER ASPO INDIETRO
+            AGq.VARS.VAR_ASPO_RVS = 0;
             AGq.VARS.VAR_ASPO_START = 0;
 #endif
         }
-        private void aspoBackwardButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER ASPO INDIETRO
-            AGq.VARS.VAR_ASPO_START = 1;
-#endif
-        }
+
         private void aspoOpenButton_MouseDown(object sender, EventArgs e)
         {
             aspoOpenButton.BackColor = Color.Green;
@@ -259,13 +234,7 @@ namespace STIRPARO
             AGq.VARS.VAR_ASPO_BLOCCA_COIL = 0;
 #endif
         }
-        private void aspoOpenButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            AGq.VARS.VAR_ASPO_CENTRALINA_START = 1;
-            AGq.VARS.VAR_ASPO_BLOCCA_COIL = 1;
-#endif
-        }
+
 
         private void aspoCloseButton_MouseDown(object sender, EventArgs e)
         {
@@ -284,13 +253,7 @@ namespace STIRPARO
             AGq.VARS.VAR_ASPO_SBLOCCA_COIL = 0;
 #endif
         }
-        private void aspoCloseButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            AGq.VARS.VAR_ASPO_CENTRALINA_START = 1;
-            AGq.VARS.VAR_ASPO_SBLOCCA_COIL = 1;
-#endif
-        }
+
 
         private void aspoUpButton_MouseDown(object sender, EventArgs e)
         {
@@ -309,13 +272,7 @@ namespace STIRPARO
             AGq.VARS.VAR_ASPO_ALZA_COIL = 0;
 #endif
         }
-        private void aspoUpButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            AGq.VARS.VAR_ASPO_CENTRALINA_START = 1;
-            AGq.VARS.VAR_ASPO_ALZA_COIL = 1;
-#endif
-        }
+
 
         private void aspoDownButton_MouseDown(object sender, EventArgs e)
         {
@@ -330,15 +287,8 @@ namespace STIRPARO
         {
             aspoDownButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            AGq.VARS.VAR_ASPO_CENTRALINA_START = 1;
-            AGq.VARS.VAR_ASPO_ABBASSA_COIL = 1;
-#endif
-        }
-        private void aspoDownButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            AGq.VARS.VAR_ASPO_CENTRALINA_START = 1;
-            AGq.VARS.VAR_ASPO_ABBASSA_COIL = 1;
+            AGq.VARS.VAR_ASPO_CENTRALINA_START = 0;
+            AGq.VARS.VAR_ASPO_ABBASSA_COIL = 0;
 #endif
         }
 
@@ -348,7 +298,7 @@ namespace STIRPARO
         {
             straightenerBackwardButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER RADDRIZZATRICE INDIETRO
+            AGq.VARS.VAR_RADD_RVS = 1;
             AGq.VARS.VAR_RADD_START = 1;
 #endif
         }
@@ -357,23 +307,16 @@ namespace STIRPARO
         {
             straightenerBackwardButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER RADDRIZZATRICE INDIETRO
+            AGq.VARS.VAR_RADD_RVS = 0;
             AGq.VARS.VAR_RADD_START = 0;
 #endif
         }
-        private void straightenerBackwardButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER RADDRIZZATRICE INDIETRO
-            AGq.VARS.VAR_RADD_START = 1;
-#endif
 
-        }
         private void straightenerForwardButton_MouseDown(object sender, EventArgs e)
         {
             straightenerForwardButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER RADDRIZZATRICE AVANTI
+            AGq.VARS.VAR_RADD_RVS = 0;
             AGq.VARS.VAR_RADD_START = 1;
 #endif
         }
@@ -382,23 +325,17 @@ namespace STIRPARO
         {
             straightenerForwardButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER RADDRIZZATRICE AVANTI
+            AGq.VARS.VAR_RADD_RVS = 0;
             AGq.VARS.VAR_RADD_START = 0;
 #endif
         }
-        private void straightenerForwardButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER RADDRIZZATRICE INDIETRO
-            AGq.VARS.VAR_RADD_START = 1;
-#endif
-        }
+
 
         private void profilingForwardButton_MouseDown(object sender, EventArgs e)
         {
             profilingForwardButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER PROFILATRICE AVANTI
+            AGq.VARS.VAR_PROF_RVS = 0;
             AGq.VARS.VAR_PROF_START = 1;
 #endif
         }
@@ -407,23 +344,17 @@ namespace STIRPARO
         {
             profilingForwardButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER PROFILATRICE AVANTI
+            AGq.VARS.VAR_PROF_RVS = 0;
             AGq.VARS.VAR_PROF_START = 0;
 #endif
         }
-        private void profilingForwardButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER PROFILATRICE AVANTI
-            AGq.VARS.VAR_PROF_START = 1;
-#endif
-        }
+
 
         private void profilingBackwardButton_MouseDown(object sender, EventArgs e)
         {
             profilingBackwardButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER PROFILATRICE INDIETRO
+            AGq.VARS.VAR_PROF_RVS = 1;
             AGq.VARS.VAR_PROF_START = 1;
 #endif
         }
@@ -432,24 +363,18 @@ namespace STIRPARO
         {
             profilingBackwardButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER PROFILATRICE INDIETRO
+            AGq.VARS.VAR_PROF_RVS = 0;
             AGq.VARS.VAR_PROF_START = 0;
 #endif
         }
-        private void profilingBackwardButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER PROFILATRICE INDIETRO
-            AGq.VARS.VAR_PROF_START = 1;
-#endif
-        }
+
 
         private void shearUpButton_MouseDown(object sender, EventArgs e)
         {
             shearUpButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER CESOIA SU
-            //AGq.VARS.VAR_CESOIA_START = 1;
+            AGq.VARS.VAR_TRANCIA_CENTRALINA_START = 1;
+            AGq.VARS.VAR_TRANCIA_SU = 1;
 #endif
         }
 
@@ -457,24 +382,18 @@ namespace STIRPARO
         {
             shearUpButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER CESOIA SU
-            //AGq.VARS.VAR_CESOIA_START = 0;
+            AGq.VARS.VAR_TRANCIA_CENTRALINA_START = 0;
+            AGq.VARS.VAR_TRANCIA_SU = 0;
 #endif
         }
-        private void shearUpButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER CESOIA SU
-            //AGq.VARS.VAR_CESOIA_START = 1;
-#endif
-        }
+
 
         private void shearDownButton_MouseDown(object sender, EventArgs e)
         {
             shearDownButton.BackColor = Color.Green;
 #if STIRPARO
-            //INVERTER CESOIA GIU
-            //AGq.VARS.VAR_CESOIA_START = 1;
+            AGq.VARS.VAR_TRANCIA_CENTRALINA_START = 1;
+            AGq.VARS.VAR_TRANCIA_GIU = 1;
 #endif
         }
 
@@ -482,17 +401,11 @@ namespace STIRPARO
         {
             shearDownButton.BackColor = SystemColors.ControlLight;
 #if STIRPARO
-            //INVERTER CESOIA GIU
-            //AGq.VARS.VAR_CESOIA_START = 0;
+            AGq.VARS.VAR_TRANCIA_CENTRALINA_START = 0;
+            AGq.VARS.VAR_TRANCIA_GIU = 0;
 #endif
         }
-        private void shearDownButton_Click(object sender, EventArgs e)
-        {
-#if STIRPARO
-            //INVERTER CESOIA GIU
-            //AGq.VARS.VAR_CESOIA_START = 1;
-#endif
-        }
+
 
 
         private void aspoVelUpDown_ValueChanged(object sender, EventArgs e)
@@ -512,5 +425,6 @@ namespace STIRPARO
             ushort value = Convert.ToUInt16(profilingVelUpDown.Value);
             AGq.VARS.PROF_OVERRIDE = value;
         }
+
     }
 }
