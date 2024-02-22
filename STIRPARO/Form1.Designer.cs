@@ -43,12 +43,12 @@ namespace STIRPARO
             this.aspoRightButton = new System.Windows.Forms.Button();
             this.aspoDownButton = new System.Windows.Forms.Button();
             this.straightenerPanel = new System.Windows.Forms.Panel();
-            this.straightenerUpDown = new System.Windows.Forms.NumericUpDown();
+            this.straightenerVelUpDown = new System.Windows.Forms.NumericUpDown();
             this.straightenerLabel = new System.Windows.Forms.Label();
-            this.straightnerBackwardButton = new System.Windows.Forms.Button();
-            this.straightnerForwardButton = new System.Windows.Forms.Button();
+            this.straightenerBackwardButton = new System.Windows.Forms.Button();
+            this.straightenerForwardButton = new System.Windows.Forms.Button();
             this.profilingPanel = new System.Windows.Forms.Panel();
-            this.profilingUpDown = new System.Windows.Forms.NumericUpDown();
+            this.profilingVelUpDown = new System.Windows.Forms.NumericUpDown();
             this.profilingLabel = new System.Windows.Forms.Label();
             this.profilingBackwardButton = new System.Windows.Forms.Button();
             this.profilingForwardButton = new System.Windows.Forms.Button();
@@ -67,9 +67,9 @@ namespace STIRPARO
             this.aspoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aspoVelUpDown)).BeginInit();
             this.straightenerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.straightenerUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.straightenerVelUpDown)).BeginInit();
             this.profilingPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilingUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilingVelUpDown)).BeginInit();
             this.shearPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             this.SuspendLayout();
@@ -248,10 +248,10 @@ namespace STIRPARO
             // straightenerPanel
             // 
             this.straightenerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.straightenerPanel.Controls.Add(this.straightenerUpDown);
+            this.straightenerPanel.Controls.Add(this.straightenerVelUpDown);
             this.straightenerPanel.Controls.Add(this.straightenerLabel);
-            this.straightenerPanel.Controls.Add(this.straightnerBackwardButton);
-            this.straightenerPanel.Controls.Add(this.straightnerForwardButton);
+            this.straightenerPanel.Controls.Add(this.straightenerBackwardButton);
+            this.straightenerPanel.Controls.Add(this.straightenerForwardButton);
             this.straightenerPanel.Enabled = false;
             this.straightenerPanel.Location = new System.Drawing.Point(609, 3);
             this.straightenerPanel.Name = "straightenerPanel";
@@ -259,12 +259,12 @@ namespace STIRPARO
             this.straightenerPanel.TabIndex = 1;
             this.straightenerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.straightenerPanel_Paint);
             // 
-            // straightenerUpDown
+            // straightenerVelUpDown
             // 
-            this.straightenerUpDown.Location = new System.Drawing.Point(150, 531);
-            this.straightenerUpDown.Name = "straightenerUpDown";
-            this.straightenerUpDown.Size = new System.Drawing.Size(120, 22);
-            this.straightenerUpDown.TabIndex = 15;
+            this.straightenerVelUpDown.Location = new System.Drawing.Point(150, 531);
+            this.straightenerVelUpDown.Name = "straightenerVelUpDown";
+            this.straightenerVelUpDown.Size = new System.Drawing.Size(120, 22);
+            this.straightenerVelUpDown.TabIndex = 15;
             // 
             // straightenerLabel
             // 
@@ -275,40 +275,40 @@ namespace STIRPARO
             this.straightenerLabel.TabIndex = 12;
             this.straightenerLabel.Text = "RADDRIZZATRICE";
             // 
-            // straightnerBackwardButton
+            // straightenerBackwardButton
             // 
-            this.straightnerBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.straightnerBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightnerBackwardButton.Image")));
-            this.straightnerBackwardButton.Location = new System.Drawing.Point(9, 453);
-            this.straightnerBackwardButton.Name = "straightnerBackwardButton";
-            this.straightnerBackwardButton.Size = new System.Drawing.Size(100, 100);
-            this.straightnerBackwardButton.TabIndex = 14;
-            this.straightnerBackwardButton.Text = "INDIETRO";
-            this.straightnerBackwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.straightnerBackwardButton.UseVisualStyleBackColor = true;
-            this.straightnerBackwardButton.Click += new System.EventHandler(this.straightnerBackwardButton_Click);
-            this.straightnerBackwardButton.MouseDown += this.straightnerBackwardButton_MouseDown;
-            this.straightnerBackwardButton.MouseUp += this.straightnerBackwardButton_MouseUp;
+            this.straightenerBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.straightenerBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightenerBackwardButton.Image")));
+            this.straightenerBackwardButton.Location = new System.Drawing.Point(9, 453);
+            this.straightenerBackwardButton.Name = "straightenerBackwardButton";
+            this.straightenerBackwardButton.Size = new System.Drawing.Size(100, 100);
+            this.straightenerBackwardButton.TabIndex = 14;
+            this.straightenerBackwardButton.Text = "INDIETRO";
+            this.straightenerBackwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.straightenerBackwardButton.UseVisualStyleBackColor = true;
+            this.straightenerBackwardButton.Click += new System.EventHandler(this.straightenerBackwardButton_Click);
+            this.straightenerBackwardButton.MouseDown += this.straightenerBackwardButton_MouseDown;
+            this.straightenerBackwardButton.MouseUp += this.straightenerBackwardButton_MouseUp;
             // 
-            // straightnerForwardButton
+            // straightenerForwardButton
             // 
-            this.straightnerForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.straightnerForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightnerForwardButton.Image")));
-            this.straightnerForwardButton.Location = new System.Drawing.Point(310, 453);
-            this.straightnerForwardButton.Name = "straightnerForwardButton";
-            this.straightnerForwardButton.Size = new System.Drawing.Size(100, 100);
-            this.straightnerForwardButton.TabIndex = 13;
-            this.straightnerForwardButton.Text = "AVANTI";
-            this.straightnerForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.straightnerForwardButton.UseVisualStyleBackColor = true;
-            this.straightnerForwardButton.Click += new System.EventHandler(this.straightnerForwardButton_Click);
-            this.straightnerForwardButton.MouseDown += this.straightnerForwardButton_MouseDown;
-            this.straightnerForwardButton.MouseUp += this.straightnerForwardButton_MouseUp;
+            this.straightenerForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.straightenerForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightenerForwardButton.Image")));
+            this.straightenerForwardButton.Location = new System.Drawing.Point(310, 453);
+            this.straightenerForwardButton.Name = "straightenerForwardButton";
+            this.straightenerForwardButton.Size = new System.Drawing.Size(100, 100);
+            this.straightenerForwardButton.TabIndex = 13;
+            this.straightenerForwardButton.Text = "AVANTI";
+            this.straightenerForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.straightenerForwardButton.UseVisualStyleBackColor = true;
+            this.straightenerForwardButton.Click += new System.EventHandler(this.straightenerForwardButton_Click);
+            this.straightenerForwardButton.MouseDown += this.straightenerForwardButton_MouseDown;
+            this.straightenerForwardButton.MouseUp += this.straightenerForwardButton_MouseUp;
             // 
             // profilingPanel
             // 
             this.profilingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.profilingPanel.Controls.Add(this.profilingUpDown);
+            this.profilingPanel.Controls.Add(this.profilingVelUpDown);
             this.profilingPanel.Controls.Add(this.profilingLabel);
             this.profilingPanel.Controls.Add(this.profilingBackwardButton);
             this.profilingPanel.Controls.Add(this.profilingForwardButton);
@@ -319,12 +319,12 @@ namespace STIRPARO
             this.profilingPanel.TabIndex = 2;
             this.profilingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.profilingPanel_Paint);
             // 
-            // profilingUpDown
+            // profilingVelUpDown
             // 
-            this.profilingUpDown.Location = new System.Drawing.Point(150, 531);
-            this.profilingUpDown.Name = "profilingUpDown";
-            this.profilingUpDown.Size = new System.Drawing.Size(120, 22);
-            this.profilingUpDown.TabIndex = 18;
+            this.profilingVelUpDown.Location = new System.Drawing.Point(150, 531);
+            this.profilingVelUpDown.Name = "profilingVelUpDown";
+            this.profilingVelUpDown.Size = new System.Drawing.Size(120, 22);
+            this.profilingVelUpDown.TabIndex = 18;
             // 
             // profilingLabel
             // 
@@ -490,10 +490,10 @@ namespace STIRPARO
             ((System.ComponentModel.ISupportInitialize)(this.aspoVelUpDown)).EndInit();
             this.straightenerPanel.ResumeLayout(false);
             this.straightenerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.straightenerUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.straightenerVelUpDown)).EndInit();
             this.profilingPanel.ResumeLayout(false);
             this.profilingPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.profilingUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profilingVelUpDown)).EndInit();
             this.shearPanel.ResumeLayout(false);
             this.shearPanel.PerformLayout();
             this.bottomPanel.ResumeLayout(false);
@@ -518,11 +518,11 @@ namespace STIRPARO
         private System.Windows.Forms.Button shearUpButton;
         private System.Windows.Forms.NumericUpDown aspoVelUpDown;
         private System.Windows.Forms.Label aspoLabel;
-        private System.Windows.Forms.NumericUpDown straightenerUpDown;
+        private System.Windows.Forms.NumericUpDown straightenerVelUpDown;
         private System.Windows.Forms.Label straightenerLabel;
-        private System.Windows.Forms.Button straightnerBackwardButton;
-        private System.Windows.Forms.Button straightnerForwardButton;
-        private System.Windows.Forms.NumericUpDown profilingUpDown;
+        private System.Windows.Forms.Button straightenerBackwardButton;
+        private System.Windows.Forms.Button straightenerForwardButton;
+        private System.Windows.Forms.NumericUpDown profilingVelUpDown;
         private System.Windows.Forms.Label profilingLabel;
         private System.Windows.Forms.Button profilingBackwardButton;
         private System.Windows.Forms.Button profilingForwardButton;

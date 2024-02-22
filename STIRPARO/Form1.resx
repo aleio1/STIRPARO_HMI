@@ -118,6 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="profilingBackwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAANBJREFUaEPtmcEKwjAQBfOFiqJ40H8XPKjgJyjoW/AQQtOWjRsVZmAOFh7sFE+a
+        AP6flbzIm9zYgxl4NqHs5F0+39phU3g2oZQHmVc5hmcTytBB9nkta3g2oWxledBD7mUNzyYUIjKJaIWI
+        TCJaISKTiFaIyCSiFSIyiWiFiMyvRhj2i8XQUQdZw7PpAjGSmGiIkcREQ4wkJhpiJDHRECOJiYYY+ZMx
+        tT82l7KGZ9OFocNOcgzPpgvlYWc5hWfTBftqHKW92YU9mIFnA/A5UnoBvX/b9k3j3/IAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="profilingForwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAM9JREFUaEPtmUEKwjAUBeMJFVFc6NldKApFb6CgL1AhFFuSH37axQwMqPDgD7hq
+        A8A87OVT3uQm/pCBZePKSj7kp/clD3IKy6YJnfwdlXuYZePOVsZDSg6zbJqwk8PD3vIkx7BsmkCMJMYb
+        YiQx3hAjifGGGEmMN8RIYrwhRi4uJj5Z+XfUUY5h2bhCRCIRtRCRSEQtRCQSUQsRiUTUQkQiEbUQkThr
+        xFoOD4rfp15sWjbuXGXpQZaNO3dZepBl4078m1zkuf+cg2UDsExC+AIRstv6T8FucAAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
   <data name="aspoBackwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -185,26 +205,6 @@
 </value>
   </data>
   <data name="straightnerForwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAM9JREFUaEPtmUEKwjAUBeMJFVFc6NldKApFb6CgL1AhFFuSH37axQwMqPDgD7hq
-        A8A87OVT3uQm/pCBZePKSj7kp/clD3IKy6YJnfwdlXuYZePOVsZDSg6zbJqwk8PD3vIkx7BsmkCMJMYb
-        YiQx3hAjifGGGEmMN8RIYrwhRi4uJj5Z+XfUUY5h2bhCRCIRtRCRSEQtRCQSUQsRiUTUQkQiEbUQkThr
-        xFoOD4rfp15sWjbuXGXpQZaNO3dZepBl4078m1zkuf+cg2UDsExC+AIRstv6T8FucAAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
-  <data name="profilingBackwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAANBJREFUaEPtmcEKwjAQBfOFiqJ40H8XPKjgJyjoW/AQQtOWjRsVZmAOFh7sFE+a
-        AP6flbzIm9zYgxl4NqHs5F0+39phU3g2oZQHmVc5hmcTytBB9nkta3g2oWxledBD7mUNzyYUIjKJaIWI
-        TCJaISKTiFaIyCSiFSIyiWiFiMyvRhj2i8XQUQdZw7PpAjGSmGiIkcREQ4wkJhpiJDHRECOJiYYY+ZMx
-        tT82l7KGZ9OFocNOcgzPpgvlYWc5hWfTBftqHKW92YU9mIFnA/A5UnoBvX/b9k3j3/IAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="profilingForwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EwAACxMBAJqcGAAAAM9JREFUaEPtmUEKwjAUBeMJFVFc6NldKApFb6CgL1AhFFuSH37axQwMqPDgD7hq
