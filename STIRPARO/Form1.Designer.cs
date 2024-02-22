@@ -84,7 +84,7 @@ namespace STIRPARO
             this.flowLayoutPanel1.Controls.Add(this.straightenerEnableButton);
             this.flowLayoutPanel1.Controls.Add(this.profilingEnableButton);
             this.flowLayoutPanel1.Controls.Add(this.shearEnableButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(70, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(2208, 657);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -180,15 +180,18 @@ namespace STIRPARO
             this.aspoForwardButton.Click += new System.EventHandler(this.aspoForwardButton_Click);
             this.aspoForwardButton.MouseDown += this.aspoForwardButton_MouseDown;
             this.aspoForwardButton.MouseUp += this.aspoForwardButton_MouseUp;
-
             // 
             // aspoUpButton
             // 
+            this.aspoUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoUpButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoUpButton.Image")));
             this.aspoUpButton.Location = new System.Drawing.Point(245, 125);
             this.aspoUpButton.Name = "aspoUpButton";
             this.aspoUpButton.Size = new System.Drawing.Size(100, 100);
             this.aspoUpButton.TabIndex = 6;
+            this.aspoUpButton.Text = "UP";
+            this.aspoUpButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.aspoUpButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.aspoUpButton.UseVisualStyleBackColor = true;
             this.aspoUpButton.Click += new System.EventHandler(this.aspoUpButton_Click);
             this.aspoUpButton.MouseDown += this.aspoUpButton_MouseDown;
@@ -196,11 +199,15 @@ namespace STIRPARO
             // 
             // aspoLeftButton
             // 
+            this.aspoLeftButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoLeftButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoLeftButton.Image")));
             this.aspoLeftButton.Location = new System.Drawing.Point(139, 231);
             this.aspoLeftButton.Name = "aspoLeftButton";
             this.aspoLeftButton.Size = new System.Drawing.Size(100, 100);
             this.aspoLeftButton.TabIndex = 5;
+            this.aspoLeftButton.Text = "LEFT";
+            this.aspoLeftButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.aspoLeftButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.aspoLeftButton.UseVisualStyleBackColor = true;
             this.aspoLeftButton.Click += new System.EventHandler(this.aspoLeftButton_Click);
             this.aspoLeftButton.MouseDown += this.aspoLeftButton_MouseDown;
@@ -208,11 +215,15 @@ namespace STIRPARO
             // 
             // aspoRightButton
             // 
+            this.aspoRightButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoRightButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoRightButton.Image")));
             this.aspoRightButton.Location = new System.Drawing.Point(345, 231);
             this.aspoRightButton.Name = "aspoRightButton";
             this.aspoRightButton.Size = new System.Drawing.Size(100, 100);
             this.aspoRightButton.TabIndex = 4;
+            this.aspoRightButton.Text = "RIGHT";
+            this.aspoRightButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.aspoRightButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.aspoRightButton.UseVisualStyleBackColor = true;
             this.aspoRightButton.Click += new System.EventHandler(this.aspoRightButton_Click);
             this.aspoRightButton.MouseDown += this.aspoRightButton_MouseDown;
@@ -220,11 +231,15 @@ namespace STIRPARO
             // 
             // aspoDownButton
             // 
+            this.aspoDownButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aspoDownButton.Image = ((System.Drawing.Image)(resources.GetObject("aspoDownButton.Image")));
             this.aspoDownButton.Location = new System.Drawing.Point(245, 335);
             this.aspoDownButton.Name = "aspoDownButton";
             this.aspoDownButton.Size = new System.Drawing.Size(100, 100);
             this.aspoDownButton.TabIndex = 3;
+            this.aspoDownButton.Text = "DOWN";
+            this.aspoDownButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.aspoDownButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.aspoDownButton.UseVisualStyleBackColor = true;
             this.aspoDownButton.Click += new System.EventHandler(this.aspoDownButton_Click);
             this.aspoDownButton.MouseDown += this.aspoDownButton_MouseDown;
@@ -240,12 +255,13 @@ namespace STIRPARO
             this.straightenerPanel.Enabled = false;
             this.straightenerPanel.Location = new System.Drawing.Point(609, 3);
             this.straightenerPanel.Name = "straightenerPanel";
-            this.straightenerPanel.Size = new System.Drawing.Size(520, 600);
+            this.straightenerPanel.Size = new System.Drawing.Size(420, 600);
             this.straightenerPanel.TabIndex = 1;
+            this.straightenerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.straightenerPanel_Paint);
             // 
             // straightenerUpDown
             // 
-            this.straightenerUpDown.Location = new System.Drawing.Point(187, 531);
+            this.straightenerUpDown.Location = new System.Drawing.Point(150, 531);
             this.straightenerUpDown.Name = "straightenerUpDown";
             this.straightenerUpDown.Size = new System.Drawing.Size(120, 22);
             this.straightenerUpDown.TabIndex = 15;
@@ -263,7 +279,7 @@ namespace STIRPARO
             // 
             this.straightnerBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.straightnerBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightnerBackwardButton.Image")));
-            this.straightnerBackwardButton.Location = new System.Drawing.Point(7, 453);
+            this.straightnerBackwardButton.Location = new System.Drawing.Point(9, 453);
             this.straightnerBackwardButton.Name = "straightnerBackwardButton";
             this.straightnerBackwardButton.Size = new System.Drawing.Size(100, 100);
             this.straightnerBackwardButton.TabIndex = 14;
@@ -278,7 +294,7 @@ namespace STIRPARO
             // 
             this.straightnerForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.straightnerForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("straightnerForwardButton.Image")));
-            this.straightnerForwardButton.Location = new System.Drawing.Point(415, 453);
+            this.straightnerForwardButton.Location = new System.Drawing.Point(310, 453);
             this.straightnerForwardButton.Name = "straightnerForwardButton";
             this.straightnerForwardButton.Size = new System.Drawing.Size(100, 100);
             this.straightnerForwardButton.TabIndex = 13;
@@ -297,14 +313,15 @@ namespace STIRPARO
             this.profilingPanel.Controls.Add(this.profilingBackwardButton);
             this.profilingPanel.Controls.Add(this.profilingForwardButton);
             this.profilingPanel.Enabled = false;
-            this.profilingPanel.Location = new System.Drawing.Point(1135, 3);
+            this.profilingPanel.Location = new System.Drawing.Point(1035, 3);
             this.profilingPanel.Name = "profilingPanel";
-            this.profilingPanel.Size = new System.Drawing.Size(520, 600);
+            this.profilingPanel.Size = new System.Drawing.Size(420, 600);
             this.profilingPanel.TabIndex = 2;
+            this.profilingPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.profilingPanel_Paint);
             // 
             // profilingUpDown
             // 
-            this.profilingUpDown.Location = new System.Drawing.Point(202, 531);
+            this.profilingUpDown.Location = new System.Drawing.Point(150, 531);
             this.profilingUpDown.Name = "profilingUpDown";
             this.profilingUpDown.Size = new System.Drawing.Size(120, 22);
             this.profilingUpDown.TabIndex = 18;
@@ -321,7 +338,7 @@ namespace STIRPARO
             // profilingBackwardButton
             // 
             this.profilingBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("profilingBackwardButton.Image")));
-            this.profilingBackwardButton.Location = new System.Drawing.Point(3, 453);
+            this.profilingBackwardButton.Location = new System.Drawing.Point(9, 453);
             this.profilingBackwardButton.Name = "profilingBackwardButton";
             this.profilingBackwardButton.Size = new System.Drawing.Size(100, 100);
             this.profilingBackwardButton.TabIndex = 17;
@@ -333,7 +350,7 @@ namespace STIRPARO
             // profilingForwardButton
             // 
             this.profilingForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("profilingForwardButton.Image")));
-            this.profilingForwardButton.Location = new System.Drawing.Point(415, 453);
+            this.profilingForwardButton.Location = new System.Drawing.Point(310, 453);
             this.profilingForwardButton.Name = "profilingForwardButton";
             this.profilingForwardButton.Size = new System.Drawing.Size(100, 100);
             this.profilingForwardButton.TabIndex = 16;
@@ -349,9 +366,9 @@ namespace STIRPARO
             this.shearPanel.Controls.Add(this.shearDownButton);
             this.shearPanel.Controls.Add(this.shearUpButton);
             this.shearPanel.Enabled = false;
-            this.shearPanel.Location = new System.Drawing.Point(1661, 3);
+            this.shearPanel.Location = new System.Drawing.Point(1461, 3);
             this.shearPanel.Name = "shearPanel";
-            this.shearPanel.Size = new System.Drawing.Size(500, 600);
+            this.shearPanel.Size = new System.Drawing.Size(420, 600);
             this.shearPanel.TabIndex = 3;
             // 
             // shearLabel
@@ -366,7 +383,7 @@ namespace STIRPARO
             // shearDownButton
             // 
             this.shearDownButton.Image = ((System.Drawing.Image)(resources.GetObject("shearDownButton.Image")));
-            this.shearDownButton.Location = new System.Drawing.Point(101, 427);
+            this.shearDownButton.Location = new System.Drawing.Point(310, 453);
             this.shearDownButton.Name = "shearDownButton";
             this.shearDownButton.Size = new System.Drawing.Size(100, 100);
             this.shearDownButton.TabIndex = 11;
@@ -378,7 +395,7 @@ namespace STIRPARO
             // shearUpButton
             // 
             this.shearUpButton.Image = ((System.Drawing.Image)(resources.GetObject("shearUpButton.Image")));
-            this.shearUpButton.Location = new System.Drawing.Point(101, 321);
+            this.shearUpButton.Location = new System.Drawing.Point(9, 453);
             this.shearUpButton.Name = "shearUpButton";
             this.shearUpButton.Size = new System.Drawing.Size(100, 100);
             this.shearUpButton.TabIndex = 10;
@@ -391,7 +408,7 @@ namespace STIRPARO
             // 
             this.aspoEnableButton.Location = new System.Drawing.Point(3, 609);
             this.aspoEnableButton.Name = "aspoEnableButton";
-            this.aspoEnableButton.Size = new System.Drawing.Size(300, 37);
+            this.aspoEnableButton.Size = new System.Drawing.Size(600, 37);
             this.aspoEnableButton.TabIndex = 4;
             this.aspoEnableButton.Text = "ENABLE";
             this.aspoEnableButton.UseVisualStyleBackColor = true;
@@ -399,9 +416,9 @@ namespace STIRPARO
             // 
             // straightenerEnableButton
             // 
-            this.straightenerEnableButton.Location = new System.Drawing.Point(309, 609);
+            this.straightenerEnableButton.Location = new System.Drawing.Point(609, 609);
             this.straightenerEnableButton.Name = "straightenerEnableButton";
-            this.straightenerEnableButton.Size = new System.Drawing.Size(260, 37);
+            this.straightenerEnableButton.Size = new System.Drawing.Size(420, 37);
             this.straightenerEnableButton.TabIndex = 5;
             this.straightenerEnableButton.Text = "ENABLE";
             this.straightenerEnableButton.UseVisualStyleBackColor = true;
@@ -409,9 +426,9 @@ namespace STIRPARO
             // 
             // profilingEnableButton
             // 
-            this.profilingEnableButton.Location = new System.Drawing.Point(575, 609);
+            this.profilingEnableButton.Location = new System.Drawing.Point(1035, 609);
             this.profilingEnableButton.Name = "profilingEnableButton";
-            this.profilingEnableButton.Size = new System.Drawing.Size(260, 37);
+            this.profilingEnableButton.Size = new System.Drawing.Size(420, 37);
             this.profilingEnableButton.TabIndex = 6;
             this.profilingEnableButton.Text = "ENABLE";
             this.profilingEnableButton.UseVisualStyleBackColor = true;
@@ -419,9 +436,9 @@ namespace STIRPARO
             // 
             // shearEnableButton
             // 
-            this.shearEnableButton.Location = new System.Drawing.Point(841, 609);
+            this.shearEnableButton.Location = new System.Drawing.Point(1461, 609);
             this.shearEnableButton.Name = "shearEnableButton";
-            this.shearEnableButton.Size = new System.Drawing.Size(260, 37);
+            this.shearEnableButton.Size = new System.Drawing.Size(420, 37);
             this.shearEnableButton.TabIndex = 7;
             this.shearEnableButton.Text = "ENABLE";
             this.shearEnableButton.UseVisualStyleBackColor = true;
@@ -431,7 +448,7 @@ namespace STIRPARO
             // 
             this.bottomPanel.Controls.Add(this.connectButton);
             this.bottomPanel.Controls.Add(this.closeButton);
-            this.bottomPanel.Location = new System.Drawing.Point(20, 777);
+            this.bottomPanel.Location = new System.Drawing.Point(70, 777);
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(917, 100);
             this.bottomPanel.TabIndex = 1;
@@ -464,7 +481,9 @@ namespace STIRPARO
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.flowLayoutPanel1.ResumeLayout(false);
             this.aspoPanel.ResumeLayout(false);
             this.aspoPanel.PerformLayout();

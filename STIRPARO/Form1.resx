@@ -118,30 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="shearDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAVFJREFUaEPtllsKAjEMRccdqih+6PYFxccGFDQBLwyhHftI2xR64H7YaUoOnTqd
-        BoPBYGCBPeVOOVPWPGCMDeVCeVIOPOBiRblRPr+8KN7JDeBeuCf096Bwz06uFEy0JCMlONyrly1FFrSW
-        cUnwb+51kR1FFr4pJ0pt+My6ejlSgrAgky0BWsqoSYAWMuoSoKZMMQlQQ6a4BCgpU00ClJCpLgE0ZYpJ
-        8MIhl0bf1zbmBpCyRpFLY0ojIKVW1qheGjUaSq1RvzTGNBYzF/hqilwaQ2pSDnb2n4G2TBMJoPkaaK2z
-        VLOI1s7MU20nJJoyzSSAhkxzCZAjY0YCpBxCfvbveeyaKqTsjI/qOyHRkGkuAXJkzEiAFBlzEiBGxqwE
-        CJExLwGWZLqRAL5vgmus+HciF9fOzGN6JyQ+ma4kgJTpUgJApmsJwIfa/MEeDAZdME1fc6DcJFp4X8QA
-        AAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="shearUpButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAAU1JREFUaEPtltFqwzAMRfOF60tHH7pvb2GD/sQGnQS5UIyVpJIs26ADF5oEuT5R
-        EntJkiTx4rJmaj4pv5Q/yhefmBFIPNdMKVNKTCkjSSBTyPBLXUrwce3csB+AWif47l8pZ0rt2nCd2ZIA
-        w8sckQDDyrwjAYaT0UiAYWQsEqC7jIcE6CYjrRNbawJf27v+7pgmNJ1Azd5dDuuMReLoxJrLeEi81nWR
-        8ZRAwmU0L6FU4zXOVk0Vr06gRnOXzZ3xlgChMidKWcjHXo+B5pGRaniuIj+UskDzJxE13xSRB8Uy+F4N
-        0NSWNTxXEW4Xm97W3xIWCaAZg+d0p/AcP/iEBc3HQMJ9zTiKpwQIl2khAcJkWkqA5jIREqCZTKQEcJfp
-        IQHcZHpKALPMCBJALaPZNLZG2gG4bhqjqMm4bRqjKWVcNo29cN00JkmSJEaW5R/nvtuCttx80QAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
   <data name="aspoBackwardButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -236,6 +212,30 @@
         YiQx3hAjifGGGEmMN8RIYrwhRi4uJj5Z+XfUUY5h2bhCRCIRtRCRSEQtRCQSUQsRiUTUQkQiEbUQkThr
         xFoOD4rfp15sWjbuXGXpQZaNO3dZepBl4078m1zkuf+cg2UDsExC+AIRstv6T8FucAAAAABJRU5ErkJg
         gg==
+</value>
+  </data>
+  <data name="shearDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAVFJREFUaEPtllsKAjEMRccdqih+6PYFxccGFDQBLwyhHftI2xR64H7YaUoOnTqd
+        BoPBYGCBPeVOOVPWPGCMDeVCeVIOPOBiRblRPr+8KN7JDeBeuCf096Bwz06uFEy0JCMlONyrly1FFrSW
+        cUnwb+51kR1FFr4pJ0pt+My6ejlSgrAgky0BWsqoSYAWMuoSoKZMMQlQQ6a4BCgpU00ClJCpLgE0ZYpJ
+        8MIhl0bf1zbmBpCyRpFLY0ojIKVW1qheGjUaSq1RvzTGNBYzF/hqilwaQ2pSDnb2n4G2TBMJoPkaaK2z
+        VLOI1s7MU20nJJoyzSSAhkxzCZAjY0YCpBxCfvbveeyaKqTsjI/qOyHRkGkuAXJkzEiAFBlzEiBGxqwE
+        CJExLwGWZLqRAL5vgmus+HciF9fOzGN6JyQ+ma4kgJTpUgJApmsJwIfa/MEeDAZdME1fc6DcJFp4X8QA
+        AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="shearUpButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAU1JREFUaEPtltFqwzAMRfOF60tHH7pvb2GD/sQGnQS5UIyVpJIs26ADF5oEuT5R
+        EntJkiTx4rJmaj4pv5Q/yhefmBFIPNdMKVNKTCkjSSBTyPBLXUrwce3csB+AWif47l8pZ0rt2nCd2ZIA
+        w8sckQDDyrwjAYaT0UiAYWQsEqC7jIcE6CYjrRNbawJf27v+7pgmNJ1Azd5dDuuMReLoxJrLeEi81nWR
+        8ZRAwmU0L6FU4zXOVk0Vr06gRnOXzZ3xlgChMidKWcjHXo+B5pGRaniuIj+UskDzJxE13xSRB8Uy+F4N
+        0NSWNTxXEW4Xm97W3xIWCaAZg+d0p/AcP/iEBc3HQMJ9zTiKpwQIl2khAcJkWkqA5jIREqCZTKQEcJfp
+        IQHcZHpKALPMCBJALaPZNLZG2gG4bhqjqMm4bRqjKWVcNo29cN00JkmSJEaW5R/nvtuCttx80QAAAABJ
+        RU5ErkJggg==
 </value>
   </data>
 </root>

@@ -156,7 +156,7 @@ namespace STIRPARO
 
         private void aspoRightButton_MouseUp(object sender, EventArgs e)
         {
-            aspoRightButton.BackColor = Color.Red;
+            aspoRightButton.BackColor = Color.Red ;
 #if STIRPARO
             AGq.VARS.VAR_ASPO_CENTRALINA_START = 0;
             AGq.VARS.VAR_ASPO_AVANZA_COIL = 0;
@@ -492,10 +492,20 @@ namespace STIRPARO
         }
         private void shearDownButton_Click(object sender, EventArgs e)
         {
-            #if STIRPARO
+#if STIRPARO
             //INVERTER CESOIA GIU
             //AGq.VARS.VAR_CESOIA_START = 1;
 #endif
+        }
+
+        private void straightenerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void profilingPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
