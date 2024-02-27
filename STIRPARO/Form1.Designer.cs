@@ -32,6 +32,7 @@ namespace STIRPARO
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.aspoPanel = new System.Windows.Forms.Panel();
+            this.aspoOverrideLabel = new System.Windows.Forms.Label();
             this.aspoVelUpDown = new System.Windows.Forms.NumericUpDown();
             this.aspoLabel = new System.Windows.Forms.Label();
             this.aspoCloseButton = new System.Windows.Forms.Button();
@@ -43,11 +44,13 @@ namespace STIRPARO
             this.aspoRightButton = new System.Windows.Forms.Button();
             this.aspoDownButton = new System.Windows.Forms.Button();
             this.straightenerPanel = new System.Windows.Forms.Panel();
+            this.straightenerOverrideLabel = new System.Windows.Forms.Label();
             this.straightenerVelUpDown = new System.Windows.Forms.NumericUpDown();
             this.straightenerLabel = new System.Windows.Forms.Label();
             this.straightenerBackwardButton = new System.Windows.Forms.Button();
             this.straightenerForwardButton = new System.Windows.Forms.Button();
             this.profilingPanel = new System.Windows.Forms.Panel();
+            this.profilingOverrideLabel = new System.Windows.Forms.Label();
             this.profilingVelUpDown = new System.Windows.Forms.NumericUpDown();
             this.profilingLabel = new System.Windows.Forms.Label();
             this.profilingBackwardButton = new System.Windows.Forms.Button();
@@ -63,6 +66,8 @@ namespace STIRPARO
             this.bottomPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.connectButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
+            this.switchAutoManualButton = new System.Windows.Forms.Button();
+            this.modeLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.aspoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aspoVelUpDown)).BeginInit();
@@ -92,6 +97,7 @@ namespace STIRPARO
             // aspoPanel
             // 
             this.aspoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.aspoPanel.Controls.Add(this.aspoOverrideLabel);
             this.aspoPanel.Controls.Add(this.aspoVelUpDown);
             this.aspoPanel.Controls.Add(this.aspoLabel);
             this.aspoPanel.Controls.Add(this.aspoCloseButton);
@@ -107,6 +113,15 @@ namespace STIRPARO
             this.aspoPanel.Name = "aspoPanel";
             this.aspoPanel.Size = new System.Drawing.Size(600, 600);
             this.aspoPanel.TabIndex = 0;
+            // 
+            // aspoOverrideLabel
+            // 
+            this.aspoOverrideLabel.AutoSize = true;
+            this.aspoOverrideLabel.Location = new System.Drawing.Point(242, 508);
+            this.aspoOverrideLabel.Name = "aspoOverrideLabel";
+            this.aspoOverrideLabel.Size = new System.Drawing.Size(79, 17);
+            this.aspoOverrideLabel.TabIndex = 13;
+            this.aspoOverrideLabel.Text = "OVERRIDE";
             // 
             // aspoVelUpDown
             // 
@@ -251,6 +266,7 @@ namespace STIRPARO
             // straightenerPanel
             // 
             this.straightenerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.straightenerPanel.Controls.Add(this.straightenerOverrideLabel);
             this.straightenerPanel.Controls.Add(this.straightenerVelUpDown);
             this.straightenerPanel.Controls.Add(this.straightenerLabel);
             this.straightenerPanel.Controls.Add(this.straightenerBackwardButton);
@@ -260,6 +276,15 @@ namespace STIRPARO
             this.straightenerPanel.Name = "straightenerPanel";
             this.straightenerPanel.Size = new System.Drawing.Size(356, 600);
             this.straightenerPanel.TabIndex = 1;
+            // 
+            // straightenerOverrideLabel
+            // 
+            this.straightenerOverrideLabel.AutoSize = true;
+            this.straightenerOverrideLabel.Location = new System.Drawing.Point(129, 508);
+            this.straightenerOverrideLabel.Name = "straightenerOverrideLabel";
+            this.straightenerOverrideLabel.Size = new System.Drawing.Size(79, 17);
+            this.straightenerOverrideLabel.TabIndex = 14;
+            this.straightenerOverrideLabel.Text = "OVERRIDE";
             // 
             // straightenerVelUpDown
             // 
@@ -273,7 +298,7 @@ namespace STIRPARO
             // 
             this.straightenerLabel.AutoSize = true;
             this.straightenerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.straightenerLabel.Location = new System.Drawing.Point(6, 4);
+            this.straightenerLabel.Location = new System.Drawing.Point(1, 4);
             this.straightenerLabel.Name = "straightenerLabel";
             this.straightenerLabel.Size = new System.Drawing.Size(317, 38);
             this.straightenerLabel.TabIndex = 12;
@@ -314,6 +339,7 @@ namespace STIRPARO
             // profilingPanel
             // 
             this.profilingPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.profilingPanel.Controls.Add(this.profilingOverrideLabel);
             this.profilingPanel.Controls.Add(this.profilingVelUpDown);
             this.profilingPanel.Controls.Add(this.profilingLabel);
             this.profilingPanel.Controls.Add(this.profilingBackwardButton);
@@ -323,6 +349,15 @@ namespace STIRPARO
             this.profilingPanel.Name = "profilingPanel";
             this.profilingPanel.Size = new System.Drawing.Size(356, 600);
             this.profilingPanel.TabIndex = 2;
+            // 
+            // profilingOverrideLabel
+            // 
+            this.profilingOverrideLabel.AutoSize = true;
+            this.profilingOverrideLabel.Location = new System.Drawing.Point(130, 508);
+            this.profilingOverrideLabel.Name = "profilingOverrideLabel";
+            this.profilingOverrideLabel.Size = new System.Drawing.Size(79, 17);
+            this.profilingOverrideLabel.TabIndex = 16;
+            this.profilingOverrideLabel.Text = "OVERRIDE";
             // 
             // profilingVelUpDown
             // 
@@ -368,7 +403,7 @@ namespace STIRPARO
             this.profilingForwardButton.Name = "profilingForwardButton";
             this.profilingForwardButton.Size = new System.Drawing.Size(100, 100);
             this.profilingForwardButton.TabIndex = 16;
-            this.profilingForwardButton.Text = "INDIETRO";
+            this.profilingForwardButton.Text = "AVANTI";
             this.profilingForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.profilingForwardButton.UseVisualStyleBackColor = false;
             this.profilingForwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.profilingForwardButton_MouseDown);
@@ -499,13 +534,36 @@ namespace STIRPARO
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // switchAutoManualButton
+            // 
+            this.switchAutoManualButton.Location = new System.Drawing.Point(1588, 777);
+            this.switchAutoManualButton.Name = "switchAutoManualButton";
+            this.switchAutoManualButton.Size = new System.Drawing.Size(110, 88);
+            this.switchAutoManualButton.TabIndex = 2;
+            this.switchAutoManualButton.Text = "AUTO";
+            this.switchAutoManualButton.UseVisualStyleBackColor = true;
+            this.switchAutoManualButton.Click += new System.EventHandler(this.switchAutoManualButton_Click);
+            // 
+            // modeLabel
+            // 
+            this.modeLabel.AutoSize = true;
+            this.modeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.modeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modeLabel.Location = new System.Drawing.Point(12, 924);
+            this.modeLabel.Name = "modeLabel";
+            this.modeLabel.Size = new System.Drawing.Size(174, 27);
+            this.modeLabel.TabIndex = 14;
+            this.modeLabel.Text = "MANUAL MODE";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.modeLabel);
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.switchAutoManualButton);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -524,6 +582,7 @@ namespace STIRPARO
             this.shearPanel.PerformLayout();
             this.bottomPanel.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -561,6 +620,11 @@ namespace STIRPARO
         private System.Windows.Forms.FlowLayoutPanel bottomPanel;
         private System.Windows.Forms.Button connectButton;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button switchAutoManualButton;
+        private System.Windows.Forms.Label aspoOverrideLabel;
+        private System.Windows.Forms.Label straightenerOverrideLabel;
+        private System.Windows.Forms.Label profilingOverrideLabel;
+        private System.Windows.Forms.Label modeLabel;
     }
 }
 

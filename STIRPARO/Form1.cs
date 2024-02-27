@@ -24,6 +24,8 @@ namespace STIRPARO
         bool straightenerlEnabled = false;
         bool profilingPanelEnabled = false;
         bool shearPanelEnabled = false;
+        bool connected = false;
+        bool manualMode = true;
         public Form1()
         {
             InitializeComponent();
@@ -36,15 +38,13 @@ namespace STIRPARO
             AGq.IpAddr = "10.0.0.80";
             AGq.IPPort = 6000;
             AGq.PortType = NgFramework.AGMng.TpcCon.ETHERNET;
-            try
-            {
-                AGq.Connect();
-            }
-            catch (System.Exception)
-            {
-                MessageBox.Show("PLC non connesso.", "Error");
+#if STIRPARO
+            aspoEnableButton.Enabled = false;
+            profilingEnableButton.Enabled = false;
+            straightenerEnableButton.Enabled = false;
+            shearEnableButton.Enabled = false;
+#endif
 
-            }
         }
 
 
@@ -126,12 +126,23 @@ namespace STIRPARO
                 string message = "Connesso";
                 string title = "Connesso";
                 DialogResult result = MessageBox.Show(message, title);
+                connected = true;
+                aspoEnableButton.Enabled = true;
+                profilingEnableButton.Enabled = true;
+                straightenerEnableButton.Enabled = true;
+                shearEnableButton.Enabled = true;
+
             }
             else
             {
                 string message = "Macchina non connessa";
                 string title = "Errore di connessione";
                 DialogResult result = MessageBox.Show(message, title);
+                connected = false;
+                aspoEnableButton.Enabled = false;
+                profilingEnableButton.Enabled = false;
+                straightenerEnableButton.Enabled = false;
+                shearEnableButton.Enabled = false;
             }
 #endif
         }
@@ -410,21 +421,43 @@ namespace STIRPARO
 
         private void aspoVelUpDown_ValueChanged(object sender, EventArgs e)
         {
-            ushort value = Convert.ToUInt16(aspoVelUpDown.Value);
+            ushort value = Convert.ToUInt16(aspoVelUpDown.Value*212/100);
             AGq.VARS.ASPO_OVERRIDE = value;
         }
 
         private void straightenerVelUpDown_ValueChanged(object sender, EventArgs e)
         {
-            ushort value = Convert.ToUInt16(straightenerVelUpDown.Value);
+            ushort value = Convert.ToUInt16(straightenerVelUpDown.Value*212/100);
             AGq.VARS.RADD_OVERRIDE = value;
         }
 
         private void profilingVelUpDown_ValueChanged(object sender, EventArgs e)
         {
-            ushort value = Convert.ToUInt16(profilingVelUpDown.Value);
+            ushort value = Convert.ToUInt16(profilingVelUpDown.Value*2048/100);
             AGq.VARS.PROF_OVERRIDE = value;
         }
+
+        private void switchAutoManualButton_Click(object sender, EventArgs e)
+        {
+            if(manualMode)
+            {
+                manualMode = false;
+                switchAutoManualButton.Text = "MANUAL";
+                modeLabel.Text = "AUTO MODE";
+                flowLayoutPanel1.Enabled = false;
+                //AGq.VARS.TEST = 1;
+                
+            }
+            else 
+            {
+                manualMode = true;
+                switchAutoManualButton.Text = "AUTO"; 
+                modeLabel.Text = "MANUAL MODE";
+                flowLayoutPanel1.Enabled = true;
+                //AGq.VARS.TEST = 2;
+            }
+        }
+
 
     }
 }
