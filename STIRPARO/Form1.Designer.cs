@@ -68,6 +68,10 @@ namespace STIRPARO
             this.closeButton = new System.Windows.Forms.Button();
             this.switchAutoManualButton = new System.Windows.Forms.Button();
             this.modeLabel = new System.Windows.Forms.Label();
+            this.lineVelUpDown = new System.Windows.Forms.NumericUpDown();
+            this.lineBackwardButton = new System.Windows.Forms.Button();
+            this.lineForwardButton = new System.Windows.Forms.Button();
+            this.linePanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.aspoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aspoVelUpDown)).BeginInit();
@@ -77,6 +81,8 @@ namespace STIRPARO
             ((System.ComponentModel.ISupportInitialize)(this.profilingVelUpDown)).BeginInit();
             this.shearPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lineVelUpDown)).BeginInit();
+            this.linePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -511,7 +517,7 @@ namespace STIRPARO
             this.bottomPanel.Controls.Add(this.closeButton);
             this.bottomPanel.Location = new System.Drawing.Point(70, 777);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(917, 100);
+            this.bottomPanel.Size = new System.Drawing.Size(370, 100);
             this.bottomPanel.TabIndex = 1;
             // 
             // connectButton
@@ -536,6 +542,7 @@ namespace STIRPARO
             // 
             // switchAutoManualButton
             // 
+            this.switchAutoManualButton.Enabled = false;
             this.switchAutoManualButton.Location = new System.Drawing.Point(1588, 777);
             this.switchAutoManualButton.Name = "switchAutoManualButton";
             this.switchAutoManualButton.Size = new System.Drawing.Size(110, 88);
@@ -555,11 +562,64 @@ namespace STIRPARO
             this.modeLabel.TabIndex = 14;
             this.modeLabel.Text = "MANUAL MODE";
             // 
+            // lineVelUpDown
+            // 
+            this.lineVelUpDown.Location = new System.Drawing.Point(306, 95);
+            this.lineVelUpDown.Name = "lineVelUpDown";
+            this.lineVelUpDown.Size = new System.Drawing.Size(120, 22);
+            this.lineVelUpDown.TabIndex = 18;
+            this.lineVelUpDown.ValueChanged += new System.EventHandler(this.lineVelUpDown_ValueChanged);
+            // 
+            // lineBackwardButton
+            // 
+            this.lineBackwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lineBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("lineBackwardButton.Image")));
+            this.lineBackwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lineBackwardButton.Location = new System.Drawing.Point(32, 17);
+            this.lineBackwardButton.Name = "lineBackwardButton";
+            this.lineBackwardButton.Size = new System.Drawing.Size(100, 100);
+            this.lineBackwardButton.TabIndex = 17;
+            this.lineBackwardButton.Text = "INDIETRO";
+            this.lineBackwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.lineBackwardButton.UseVisualStyleBackColor = false;
+            this.lineBackwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lineBackwardButton_MouseDown);
+            this.lineBackwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lineBackwardButton_MouseUp);
+            // 
+            // lineForwardButton
+            // 
+            this.lineForwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lineForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("lineForwardButton.Image")));
+            this.lineForwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lineForwardButton.Location = new System.Drawing.Point(617, 17);
+            this.lineForwardButton.Name = "lineForwardButton";
+            this.lineForwardButton.Size = new System.Drawing.Size(100, 100);
+            this.lineForwardButton.TabIndex = 16;
+            this.lineForwardButton.Text = "AVANTI";
+            this.lineForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.lineForwardButton.UseVisualStyleBackColor = false;
+            this.lineForwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lineForwardButton_MouseDown);
+            this.lineForwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lineForwardButton_MouseUp);
+            // 
+            // linePanel
+            // 
+            this.linePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linePanel.Controls.Add(this.lineForwardButton);
+            this.linePanel.Controls.Add(this.lineVelUpDown);
+            this.linePanel.Controls.Add(this.lineBackwardButton);
+            this.linePanel.Enabled = false;
+            this.linePanel.Location = new System.Drawing.Point(586, 757);
+            this.linePanel.Name = "linePanel";
+            this.linePanel.Size = new System.Drawing.Size(763, 136);
+            this.linePanel.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.linePanel);
             this.Controls.Add(this.modeLabel);
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -581,6 +641,8 @@ namespace STIRPARO
             this.shearPanel.ResumeLayout(false);
             this.shearPanel.PerformLayout();
             this.bottomPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lineVelUpDown)).EndInit();
+            this.linePanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -625,6 +687,10 @@ namespace STIRPARO
         private System.Windows.Forms.Label straightenerOverrideLabel;
         private System.Windows.Forms.Label profilingOverrideLabel;
         private System.Windows.Forms.Label modeLabel;
+        private System.Windows.Forms.NumericUpDown lineVelUpDown;
+        private System.Windows.Forms.Button lineBackwardButton;
+        private System.Windows.Forms.Button lineForwardButton;
+        private System.Windows.Forms.Panel linePanel;
     }
 }
 

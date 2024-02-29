@@ -131,6 +131,7 @@ namespace STIRPARO
                 profilingEnableButton.Enabled = true;
                 straightenerEnableButton.Enabled = true;
                 shearEnableButton.Enabled = true;
+                switchAutoManualButton.Enabled = true;
 
             }
             else
@@ -143,6 +144,8 @@ namespace STIRPARO
                 profilingEnableButton.Enabled = false;
                 straightenerEnableButton.Enabled = false;
                 shearEnableButton.Enabled = false;
+                switchAutoManualButton.Enabled = false;
+
             }
 #endif
         }
@@ -445,8 +448,13 @@ namespace STIRPARO
                 switchAutoManualButton.Text = "MANUAL";
                 modeLabel.Text = "AUTO MODE";
                 flowLayoutPanel1.Enabled = false;
-                //AGq.VARS.TEST = 1;
+                AGq.VARS.TEST = 1;
+                linePanel.Enabled = true;
+                AGq.VARS.PROF_OVERRIDE = 0;
+                profilingVelUpDown.Value = 0;
                 
+
+
             }
             else 
             {
@@ -454,10 +462,54 @@ namespace STIRPARO
                 switchAutoManualButton.Text = "AUTO"; 
                 modeLabel.Text = "MANUAL MODE";
                 flowLayoutPanel1.Enabled = true;
-                //AGq.VARS.TEST = 2;
+                AGq.VARS.TEST = 2;
+                linePanel.Enabled = false;
+                AGq.VARS.PROF_OVERRIDE = 0;
+                lineVelUpDown.Value = 0;
             }
         }
 
+        private void lineForwardButton_MouseDown(object sender, EventArgs e)
+        {
+            lineForwardButton.BackColor = Color.Green;
+#if STIRPARO
+            AGq.VARS.VAR_PROF_RVS = 0;
+            AGq.VARS.VAR_PROF_START = 1;
+#endif
+        }
 
+        private void lineForwardButton_MouseUp(object sender, EventArgs e)
+        {
+            lineForwardButton.BackColor = SystemColors.ControlLight;
+#if STIRPARO
+            AGq.VARS.VAR_PROF_RVS = 0;
+            AGq.VARS.VAR_PROF_START = 0;
+#endif
+        }
+
+
+        private void lineBackwardButton_MouseDown(object sender, EventArgs e)
+        {
+            lineBackwardButton.BackColor = Color.Green;
+#if STIRPARO
+            AGq.VARS.VAR_PROF_RVS = 1;
+            AGq.VARS.VAR_PROF_START = 1;
+#endif
+        }
+
+        private void lineBackwardButton_MouseUp(object sender, EventArgs e)
+        {
+            lineBackwardButton.BackColor = SystemColors.ControlLight;
+#if STIRPARO
+            AGq.VARS.VAR_PROF_RVS = 0;
+            AGq.VARS.VAR_PROF_START = 0;
+#endif
+        }
+
+        private void lineVelUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            ushort value = Convert.ToUInt16(lineVelUpDown.Value * 2048 / 100);
+            AGq.VARS.PROF_OVERRIDE = value;
+        }
     }
 }
