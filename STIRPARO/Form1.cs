@@ -26,6 +26,7 @@ namespace STIRPARO
         bool shearPanelEnabled = false;
         bool connected = false;
         bool manualMode = true;
+        bool autoStopped = false;
         public Form1()
         {
             InitializeComponent();
@@ -131,8 +132,10 @@ namespace STIRPARO
                 profilingEnableButton.Enabled = true;
                 straightenerEnableButton.Enabled = true;
                 shearEnableButton.Enabled = true;
-                switchAutoManualButton.Enabled = true;
-
+                connectButton.Enabled = false;
+                autoPanel.Enabled = true;
+                AGq.VARS.STATE_MACHINE = 0;
+                updateQuotaTimer.Enabled = true;
             }
             else
             {
@@ -144,7 +147,6 @@ namespace STIRPARO
                 profilingEnableButton.Enabled = false;
                 straightenerEnableButton.Enabled = false;
                 shearEnableButton.Enabled = false;
-                switchAutoManualButton.Enabled = false;
 
             }
 #endif
@@ -152,6 +154,7 @@ namespace STIRPARO
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            if (connected) AGq.VARS.STATE_MACHINE = 0;
             Environment.Exit(1);
         }
 
@@ -424,49 +427,25 @@ namespace STIRPARO
 
         private void aspoVelUpDown_ValueChanged(object sender, EventArgs e)
         {
-            ushort value = Convert.ToUInt16(aspoVelUpDown.Value*212/100);
+            ushort value = Convert.ToUInt16(aspoVelUpDown.Value * 212 / 100);
             AGq.VARS.ASPO_OVERRIDE = value;
         }
 
         private void straightenerVelUpDown_ValueChanged(object sender, EventArgs e)
         {
-            ushort value = Convert.ToUInt16(straightenerVelUpDown.Value*212/100);
+            ushort value = Convert.ToUInt16(straightenerVelUpDown.Value * 212 / 100);
             AGq.VARS.RADD_OVERRIDE = value;
         }
 
         private void profilingVelUpDown_ValueChanged(object sender, EventArgs e)
         {
-            ushort value = Convert.ToUInt16(profilingVelUpDown.Value*2048/100);
+            ushort value = Convert.ToUInt16(profilingVelUpDown.Value * 2048 / 100);
             AGq.VARS.PROF_OVERRIDE = value;
         }
 
         private void switchAutoManualButton_Click(object sender, EventArgs e)
         {
-            if(manualMode)
-            {
-                manualMode = false;
-                switchAutoManualButton.Text = "MANUAL";
-                modeLabel.Text = "AUTO MODE";
-                flowLayoutPanel1.Enabled = false;
-                AGq.VARS.TEST = 1;
-                linePanel.Enabled = true;
-                AGq.VARS.PROF_OVERRIDE = 0;
-                profilingVelUpDown.Value = 0;
-                
 
-
-            }
-            else 
-            {
-                manualMode = true;
-                switchAutoManualButton.Text = "AUTO"; 
-                modeLabel.Text = "MANUAL MODE";
-                flowLayoutPanel1.Enabled = true;
-                AGq.VARS.TEST = 2;
-                linePanel.Enabled = false;
-                AGq.VARS.PROF_OVERRIDE = 0;
-                lineVelUpDown.Value = 0;
-            }
         }
 
         private void lineForwardButton_MouseDown(object sender, EventArgs e)
@@ -509,7 +488,155 @@ namespace STIRPARO
         private void lineVelUpDown_ValueChanged(object sender, EventArgs e)
         {
             ushort value = Convert.ToUInt16(lineVelUpDown.Value * 2048 / 100);
-            AGq.VARS.PROF_OVERRIDE = value;
+            AGq.VARS.PREV_PROF_OVR = value;
         }
+
+        private void switchManualButton_Click(object sender, EventArgs e)
+        {
+            if (!connected)
+            {
+                string message = "Macchina non connessa.";
+                string caption = "Warning";
+                MessageBox.Show(message, caption);
+            }
+            manualMode = true;
+            modeLabel.Text = "MANUAL MODE";
+            switchAutoButton.Enabled = true;
+            switchManualButton.Enabled = false;
+            flowLayoutPanel1.Enabled = true;
+
+#if STIRPARO
+            try
+            {
+                AGq.VARS.STATE_MACHINE = 2;
+                AGq.VARS.PROF_OVERRIDE = 0;
+            }
+            catch (Exception ex)
+            {
+                ;
+
+            }
+
+#endif
+            linePanel.Enabled = false;
+
+            lineVelUpDown.Value = 0;
+            flowLayoutPanel1.Show();
+            autoPanel.Hide();
+        }
+
+        private void switchAutoButton_Click(object sender, EventArgs e)
+        {
+            if (!connected)
+            {
+                string message = "Macchina non connessa.";
+                string caption = "Warning";
+                MessageBox.Show(message, caption);
+            }
+            manualMode = false;
+            modeLabel.Text = " AUTO MODE ";
+            switchAutoButton.Enabled = false;
+            switchManualButton.Enabled = true;
+            flowLayoutPanel1.Enabled = false;
+
+#if STIRPARO
+            try
+            {
+                AGq.VARS.STATE_MACHINE = 0;
+                AGq.VARS.PROF_OVERRIDE = 0;
+            }
+            catch (Exception ex)
+            {
+                ;
+            }
+#endif
+            linePanel.Enabled = true;
+
+            profilingVelUpDown.Value = 0;
+            flowLayoutPanel1.Hide();
+            autoPanel.Show();
+
+        }
+
+        private void homingButton_Click(object sender, EventArgs e)
+        {
+            //perform Homing
+            checkHomingTimer.Stop();
+            AGq.VARS.STATE_MACHINE = 1;
+            checkHomingTimer.Start();
+        }
+
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            checkQuotaTimer.Enabled = false;
+            AGq.VARS.LUNGHEZZA_LAMIERA = Convert.ToInt32(sheetLengthUpDown.Value * 1000);
+            AGq.VARS.STATE_MACHINE = 4;
+            AGq.VARS.VAR_PROF_START = 1;
+            checkQuotaTimer.Enabled = true;
+
+        }
+
+        private void checkHomingTimer_Tick(object sender, EventArgs e)
+        {
+            if (AGq.VARS.FLAG_HOMING_DONE != 0)
+            {
+                checkHomingTimer.Stop();
+                startButton.Enabled = true;
+            }
+            else
+            {
+                sheetLengthUpDown.Value = AGq.VARS.FLAG_HOMING_DONE;
+
+            }
+        }
+
+        private void stopButton_Click(object sender, EventArgs e)
+        { 
+            if(!autoStopped)
+            {
+                autoStopped = true;
+                AGq.VARS.VAR_PROF_START = 0;
+                stopButton.BackColor = Color.Green;
+                stopButton.Text = "RESTORE";
+            }
+            else
+            {
+                autoStopped = false;
+                AGq.VARS.VAR_PROF_START = 1;
+                stopButton.BackColor = Color.Red;
+                stopButton.Text = "STOP";
+            }
+        }
+
+        private void checkQuotaTimer_Tick(object sender, EventArgs e)
+        {
+            //actualQuoteTextBox.Text = Convert.ToString(Convert.ToInt32(AGq.VARS.POSIZIONE_LAMIERA/1000));
+            if (AGq.VARS.FLAG_QUOTA_RAGGIUNTA == 1)
+            {
+                checkQuotaTimer.Stop();
+                string message = "Macchina arrivata in quota. Eseguire il taglio laser."; 
+                string title = "Info";
+                DialogResult result = MessageBox.Show(message, title);
+            }
+        }
+
+        private void sheetLengthUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            int value = Convert.ToInt32(sheetLengthUpDown.Value * 1000);
+            AGq.VARS.LUNGHEZZA_LAMIERA = value;
+        }
+
+        private void updateQuotaTimer_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                actualQuoteTextBox.Text = Convert.ToString(Convert.ToInt32(AGq.VARS.POSIZIONE_LAMIERA / 1000));
+            }
+            catch(Exception ex)
+            {
+                ;
+            }
+            }
     }
 }

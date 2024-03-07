@@ -29,6 +29,7 @@ namespace STIRPARO
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.aspoPanel = new System.Windows.Forms.Panel();
@@ -65,13 +66,27 @@ namespace STIRPARO
             this.shearEnableButton = new System.Windows.Forms.Button();
             this.bottomPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.connectButton = new System.Windows.Forms.Button();
+            this.switchAutoButton = new System.Windows.Forms.Button();
+            this.switchManualButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.switchAutoManualButton = new System.Windows.Forms.Button();
             this.modeLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.autoPanel = new System.Windows.Forms.Panel();
+            this.actualQuoteTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sheetLengthLabel = new System.Windows.Forms.Label();
+            this.stopButton = new System.Windows.Forms.Button();
+            this.homingButton = new System.Windows.Forms.Button();
+            this.sheetLengthUpDown = new System.Windows.Forms.NumericUpDown();
+            this.startButton = new System.Windows.Forms.Button();
+            this.linePanel = new System.Windows.Forms.Panel();
+            this.lineOverrideLabel = new System.Windows.Forms.Label();
+            this.lineForwardButton = new System.Windows.Forms.Button();
             this.lineVelUpDown = new System.Windows.Forms.NumericUpDown();
             this.lineBackwardButton = new System.Windows.Forms.Button();
-            this.lineForwardButton = new System.Windows.Forms.Button();
-            this.linePanel = new System.Windows.Forms.Panel();
+            this.checkHomingTimer = new System.Windows.Forms.Timer(this.components);
+            this.checkQuotaTimer = new System.Windows.Forms.Timer(this.components);
+            this.updateQuotaTimer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.aspoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aspoVelUpDown)).BeginInit();
@@ -81,8 +96,11 @@ namespace STIRPARO
             ((System.ComponentModel.ISupportInitialize)(this.profilingVelUpDown)).BeginInit();
             this.shearPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lineVelUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.autoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetLengthUpDown)).BeginInit();
             this.linePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lineVelUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -95,9 +113,9 @@ namespace STIRPARO
             this.flowLayoutPanel1.Controls.Add(this.straightenerEnableButton);
             this.flowLayoutPanel1.Controls.Add(this.profilingEnableButton);
             this.flowLayoutPanel1.Controls.Add(this.shearEnableButton);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 12);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 378);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(2208, 657);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(2208, 706);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // aspoPanel
@@ -117,13 +135,13 @@ namespace STIRPARO
             this.aspoPanel.Enabled = false;
             this.aspoPanel.Location = new System.Drawing.Point(3, 3);
             this.aspoPanel.Name = "aspoPanel";
-            this.aspoPanel.Size = new System.Drawing.Size(600, 600);
+            this.aspoPanel.Size = new System.Drawing.Size(600, 563);
             this.aspoPanel.TabIndex = 0;
             // 
             // aspoOverrideLabel
             // 
             this.aspoOverrideLabel.AutoSize = true;
-            this.aspoOverrideLabel.Location = new System.Drawing.Point(242, 508);
+            this.aspoOverrideLabel.Location = new System.Drawing.Point(242, 473);
             this.aspoOverrideLabel.Name = "aspoOverrideLabel";
             this.aspoOverrideLabel.Size = new System.Drawing.Size(79, 17);
             this.aspoOverrideLabel.TabIndex = 13;
@@ -131,9 +149,10 @@ namespace STIRPARO
             // 
             // aspoVelUpDown
             // 
-            this.aspoVelUpDown.Location = new System.Drawing.Point(225, 531);
+            this.aspoVelUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aspoVelUpDown.Location = new System.Drawing.Point(225, 496);
             this.aspoVelUpDown.Name = "aspoVelUpDown";
-            this.aspoVelUpDown.Size = new System.Drawing.Size(120, 22);
+            this.aspoVelUpDown.Size = new System.Drawing.Size(120, 53);
             this.aspoVelUpDown.TabIndex = 12;
             this.aspoVelUpDown.ValueChanged += new System.EventHandler(this.aspoVelUpDown_ValueChanged);
             // 
@@ -280,13 +299,13 @@ namespace STIRPARO
             this.straightenerPanel.Enabled = false;
             this.straightenerPanel.Location = new System.Drawing.Point(609, 3);
             this.straightenerPanel.Name = "straightenerPanel";
-            this.straightenerPanel.Size = new System.Drawing.Size(356, 600);
+            this.straightenerPanel.Size = new System.Drawing.Size(356, 563);
             this.straightenerPanel.TabIndex = 1;
             // 
             // straightenerOverrideLabel
             // 
             this.straightenerOverrideLabel.AutoSize = true;
-            this.straightenerOverrideLabel.Location = new System.Drawing.Point(129, 508);
+            this.straightenerOverrideLabel.Location = new System.Drawing.Point(129, 473);
             this.straightenerOverrideLabel.Name = "straightenerOverrideLabel";
             this.straightenerOverrideLabel.Size = new System.Drawing.Size(79, 17);
             this.straightenerOverrideLabel.TabIndex = 14;
@@ -294,9 +313,10 @@ namespace STIRPARO
             // 
             // straightenerVelUpDown
             // 
-            this.straightenerVelUpDown.Location = new System.Drawing.Point(115, 531);
+            this.straightenerVelUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.straightenerVelUpDown.Location = new System.Drawing.Point(115, 496);
             this.straightenerVelUpDown.Name = "straightenerVelUpDown";
-            this.straightenerVelUpDown.Size = new System.Drawing.Size(120, 22);
+            this.straightenerVelUpDown.Size = new System.Drawing.Size(120, 53);
             this.straightenerVelUpDown.TabIndex = 15;
             this.straightenerVelUpDown.ValueChanged += new System.EventHandler(this.straightenerVelUpDown_ValueChanged);
             // 
@@ -353,13 +373,13 @@ namespace STIRPARO
             this.profilingPanel.Enabled = false;
             this.profilingPanel.Location = new System.Drawing.Point(971, 3);
             this.profilingPanel.Name = "profilingPanel";
-            this.profilingPanel.Size = new System.Drawing.Size(356, 600);
+            this.profilingPanel.Size = new System.Drawing.Size(356, 563);
             this.profilingPanel.TabIndex = 2;
             // 
             // profilingOverrideLabel
             // 
             this.profilingOverrideLabel.AutoSize = true;
-            this.profilingOverrideLabel.Location = new System.Drawing.Point(130, 508);
+            this.profilingOverrideLabel.Location = new System.Drawing.Point(130, 473);
             this.profilingOverrideLabel.Name = "profilingOverrideLabel";
             this.profilingOverrideLabel.Size = new System.Drawing.Size(79, 17);
             this.profilingOverrideLabel.TabIndex = 16;
@@ -367,9 +387,10 @@ namespace STIRPARO
             // 
             // profilingVelUpDown
             // 
-            this.profilingVelUpDown.Location = new System.Drawing.Point(115, 531);
+            this.profilingVelUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profilingVelUpDown.Location = new System.Drawing.Point(115, 496);
             this.profilingVelUpDown.Name = "profilingVelUpDown";
-            this.profilingVelUpDown.Size = new System.Drawing.Size(120, 22);
+            this.profilingVelUpDown.Size = new System.Drawing.Size(120, 53);
             this.profilingVelUpDown.TabIndex = 18;
             this.profilingVelUpDown.ValueChanged += new System.EventHandler(this.profilingVelUpDown_ValueChanged);
             // 
@@ -424,7 +445,7 @@ namespace STIRPARO
             this.shearPanel.Enabled = false;
             this.shearPanel.Location = new System.Drawing.Point(1333, 3);
             this.shearPanel.Name = "shearPanel";
-            this.shearPanel.Size = new System.Drawing.Size(356, 600);
+            this.shearPanel.Size = new System.Drawing.Size(356, 563);
             this.shearPanel.TabIndex = 3;
             // 
             // shearLabel
@@ -473,7 +494,7 @@ namespace STIRPARO
             // 
             // aspoEnableButton
             // 
-            this.aspoEnableButton.Location = new System.Drawing.Point(3, 609);
+            this.aspoEnableButton.Location = new System.Drawing.Point(3, 572);
             this.aspoEnableButton.Name = "aspoEnableButton";
             this.aspoEnableButton.Size = new System.Drawing.Size(600, 37);
             this.aspoEnableButton.TabIndex = 4;
@@ -483,7 +504,7 @@ namespace STIRPARO
             // 
             // straightenerEnableButton
             // 
-            this.straightenerEnableButton.Location = new System.Drawing.Point(609, 609);
+            this.straightenerEnableButton.Location = new System.Drawing.Point(609, 572);
             this.straightenerEnableButton.Name = "straightenerEnableButton";
             this.straightenerEnableButton.Size = new System.Drawing.Size(356, 37);
             this.straightenerEnableButton.TabIndex = 5;
@@ -493,7 +514,7 @@ namespace STIRPARO
             // 
             // profilingEnableButton
             // 
-            this.profilingEnableButton.Location = new System.Drawing.Point(971, 609);
+            this.profilingEnableButton.Location = new System.Drawing.Point(971, 572);
             this.profilingEnableButton.Name = "profilingEnableButton";
             this.profilingEnableButton.Size = new System.Drawing.Size(356, 37);
             this.profilingEnableButton.TabIndex = 6;
@@ -503,7 +524,7 @@ namespace STIRPARO
             // 
             // shearEnableButton
             // 
-            this.shearEnableButton.Location = new System.Drawing.Point(1333, 609);
+            this.shearEnableButton.Location = new System.Drawing.Point(1333, 572);
             this.shearEnableButton.Name = "shearEnableButton";
             this.shearEnableButton.Size = new System.Drawing.Size(356, 37);
             this.shearEnableButton.TabIndex = 7;
@@ -514,14 +535,17 @@ namespace STIRPARO
             // bottomPanel
             // 
             this.bottomPanel.Controls.Add(this.connectButton);
+            this.bottomPanel.Controls.Add(this.switchAutoButton);
+            this.bottomPanel.Controls.Add(this.switchManualButton);
             this.bottomPanel.Controls.Add(this.closeButton);
-            this.bottomPanel.Location = new System.Drawing.Point(70, 777);
+            this.bottomPanel.Location = new System.Drawing.Point(631, 217);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(370, 100);
+            this.bottomPanel.Size = new System.Drawing.Size(521, 100);
             this.bottomPanel.TabIndex = 1;
             // 
             // connectButton
             // 
+            this.connectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.connectButton.Location = new System.Drawing.Point(3, 3);
             this.connectButton.Name = "connectButton";
             this.connectButton.Size = new System.Drawing.Size(110, 88);
@@ -530,9 +554,33 @@ namespace STIRPARO
             this.connectButton.UseVisualStyleBackColor = true;
             this.connectButton.Click += new System.EventHandler(this.connectButton_Click);
             // 
+            // switchAutoButton
+            // 
+            this.switchAutoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchAutoButton.Location = new System.Drawing.Point(119, 3);
+            this.switchAutoButton.Name = "switchAutoButton";
+            this.switchAutoButton.Size = new System.Drawing.Size(110, 88);
+            this.switchAutoButton.TabIndex = 2;
+            this.switchAutoButton.Text = "AUTO";
+            this.switchAutoButton.UseVisualStyleBackColor = true;
+            this.switchAutoButton.Click += new System.EventHandler(this.switchAutoButton_Click);
+            // 
+            // switchManualButton
+            // 
+            this.switchManualButton.Enabled = false;
+            this.switchManualButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switchManualButton.Location = new System.Drawing.Point(235, 3);
+            this.switchManualButton.Name = "switchManualButton";
+            this.switchManualButton.Size = new System.Drawing.Size(110, 88);
+            this.switchManualButton.TabIndex = 3;
+            this.switchManualButton.Text = "MANUAL";
+            this.switchManualButton.UseVisualStyleBackColor = true;
+            this.switchManualButton.Click += new System.EventHandler(this.switchManualButton_Click);
+            // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(119, 3);
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Location = new System.Drawing.Point(351, 3);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(110, 88);
             this.closeButton.TabIndex = 1;
@@ -540,34 +588,179 @@ namespace STIRPARO
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // switchAutoManualButton
-            // 
-            this.switchAutoManualButton.Enabled = false;
-            this.switchAutoManualButton.Location = new System.Drawing.Point(1588, 777);
-            this.switchAutoManualButton.Name = "switchAutoManualButton";
-            this.switchAutoManualButton.Size = new System.Drawing.Size(110, 88);
-            this.switchAutoManualButton.TabIndex = 2;
-            this.switchAutoManualButton.Text = "AUTO";
-            this.switchAutoManualButton.UseVisualStyleBackColor = true;
-            this.switchAutoManualButton.Click += new System.EventHandler(this.switchAutoManualButton_Click);
-            // 
             // modeLabel
             // 
             this.modeLabel.AutoSize = true;
             this.modeLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.modeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modeLabel.Location = new System.Drawing.Point(12, 924);
+            this.modeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modeLabel.Location = new System.Drawing.Point(743, 320);
             this.modeLabel.Name = "modeLabel";
-            this.modeLabel.Size = new System.Drawing.Size(174, 27);
+            this.modeLabel.Size = new System.Drawing.Size(236, 34);
             this.modeLabel.TabIndex = 14;
             this.modeLabel.Text = "MANUAL MODE";
+            this.modeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.Location = new System.Drawing.Point(-155, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1879, 205);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // autoPanel
+            // 
+            this.autoPanel.Controls.Add(this.actualQuoteTextBox);
+            this.autoPanel.Controls.Add(this.label1);
+            this.autoPanel.Controls.Add(this.sheetLengthLabel);
+            this.autoPanel.Controls.Add(this.stopButton);
+            this.autoPanel.Controls.Add(this.homingButton);
+            this.autoPanel.Controls.Add(this.sheetLengthUpDown);
+            this.autoPanel.Controls.Add(this.startButton);
+            this.autoPanel.Controls.Add(this.linePanel);
+            this.autoPanel.Enabled = false;
+            this.autoPanel.Location = new System.Drawing.Point(12, 380);
+            this.autoPanel.Name = "autoPanel";
+            this.autoPanel.Size = new System.Drawing.Size(1712, 820);
+            this.autoPanel.TabIndex = 14;
+            this.autoPanel.Visible = false;
+            // 
+            // actualQuoteTextBox
+            // 
+            this.actualQuoteTextBox.Enabled = false;
+            this.actualQuoteTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actualQuoteTextBox.Location = new System.Drawing.Point(638, 397);
+            this.actualQuoteTextBox.Name = "actualQuoteTextBox";
+            this.actualQuoteTextBox.Size = new System.Drawing.Size(458, 75);
+            this.actualQuoteTextBox.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(687, 357);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(305, 38);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "QUOTA ATTUALE";
+            // 
+            // sheetLengthLabel
+            // 
+            this.sheetLengthLabel.AutoSize = true;
+            this.sheetLengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sheetLengthLabel.Location = new System.Drawing.Point(650, 228);
+            this.sheetLengthLabel.Name = "sheetLengthLabel";
+            this.sheetLengthLabel.Size = new System.Drawing.Size(386, 38);
+            this.sheetLengthLabel.TabIndex = 25;
+            this.sheetLengthLabel.Text = "LUNGHEZZA LAMIERA";
+            // 
+            // stopButton
+            // 
+            this.stopButton.BackColor = System.Drawing.Color.Red;
+            this.stopButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stopButton.Location = new System.Drawing.Point(577, 474);
+            this.stopButton.Name = "stopButton";
+            this.stopButton.Size = new System.Drawing.Size(561, 318);
+            this.stopButton.TabIndex = 24;
+            this.stopButton.Text = "STOP";
+            this.stopButton.UseVisualStyleBackColor = false;
+            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
+            // 
+            // homingButton
+            // 
+            this.homingButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homingButton.Location = new System.Drawing.Point(326, 240);
+            this.homingButton.Name = "homingButton";
+            this.homingButton.Size = new System.Drawing.Size(300, 225);
+            this.homingButton.TabIndex = 20;
+            this.homingButton.Text = "HOMING";
+            this.homingButton.UseVisualStyleBackColor = true;
+            this.homingButton.Click += new System.EventHandler(this.homingButton_Click);
+            // 
+            // sheetLengthUpDown
+            // 
+            this.sheetLengthUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sheetLengthUpDown.Location = new System.Drawing.Point(638, 267);
+            this.sheetLengthUpDown.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.sheetLengthUpDown.Name = "sheetLengthUpDown";
+            this.sheetLengthUpDown.Size = new System.Drawing.Size(443, 75);
+            this.sheetLengthUpDown.TabIndex = 22;
+            this.sheetLengthUpDown.Value = new decimal(new int[] {
+            2122,
+            0,
+            0,
+            0});
+            this.sheetLengthUpDown.ValueChanged += new System.EventHandler(this.sheetLengthUpDown_ValueChanged);
+            // 
+            // startButton
+            // 
+            this.startButton.Enabled = false;
+            this.startButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startButton.Location = new System.Drawing.Point(1103, 240);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(300, 225);
+            this.startButton.TabIndex = 21;
+            this.startButton.Text = "START";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // linePanel
+            // 
+            this.linePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.linePanel.Controls.Add(this.lineOverrideLabel);
+            this.linePanel.Controls.Add(this.lineForwardButton);
+            this.linePanel.Controls.Add(this.lineVelUpDown);
+            this.linePanel.Controls.Add(this.lineBackwardButton);
+            this.linePanel.Enabled = false;
+            this.linePanel.Location = new System.Drawing.Point(34, 37);
+            this.linePanel.Name = "linePanel";
+            this.linePanel.Size = new System.Drawing.Size(1651, 188);
+            this.linePanel.TabIndex = 23;
+            // 
+            // lineOverrideLabel
+            // 
+            this.lineOverrideLabel.AutoSize = true;
+            this.lineOverrideLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineOverrideLabel.Location = new System.Drawing.Point(729, 54);
+            this.lineOverrideLabel.Name = "lineOverrideLabel";
+            this.lineOverrideLabel.Size = new System.Drawing.Size(169, 32);
+            this.lineOverrideLabel.TabIndex = 26;
+            this.lineOverrideLabel.Text = "OVERRIDE";
+            // 
+            // lineForwardButton
+            // 
+            this.lineForwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lineForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("lineForwardButton.Image")));
+            this.lineForwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lineForwardButton.Location = new System.Drawing.Point(1400, 2);
+            this.lineForwardButton.Name = "lineForwardButton";
+            this.lineForwardButton.Size = new System.Drawing.Size(227, 181);
+            this.lineForwardButton.TabIndex = 16;
+            this.lineForwardButton.Text = "AVANTI";
+            this.lineForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.lineForwardButton.UseVisualStyleBackColor = false;
+            this.lineForwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lineForwardButton_MouseDown);
+            this.lineForwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lineForwardButton_MouseUp);
             // 
             // lineVelUpDown
             // 
-            this.lineVelUpDown.Location = new System.Drawing.Point(306, 95);
+            this.lineVelUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lineVelUpDown.Location = new System.Drawing.Point(735, 89);
             this.lineVelUpDown.Name = "lineVelUpDown";
-            this.lineVelUpDown.Size = new System.Drawing.Size(120, 22);
+            this.lineVelUpDown.Size = new System.Drawing.Size(158, 53);
             this.lineVelUpDown.TabIndex = 18;
+            this.lineVelUpDown.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.lineVelUpDown.ValueChanged += new System.EventHandler(this.lineVelUpDown_ValueChanged);
             // 
             // lineBackwardButton
@@ -576,9 +769,9 @@ namespace STIRPARO
             this.lineBackwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lineBackwardButton.Image = ((System.Drawing.Image)(resources.GetObject("lineBackwardButton.Image")));
             this.lineBackwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lineBackwardButton.Location = new System.Drawing.Point(32, 17);
+            this.lineBackwardButton.Location = new System.Drawing.Point(23, 2);
             this.lineBackwardButton.Name = "lineBackwardButton";
-            this.lineBackwardButton.Size = new System.Drawing.Size(100, 100);
+            this.lineBackwardButton.Size = new System.Drawing.Size(227, 181);
             this.lineBackwardButton.TabIndex = 17;
             this.lineBackwardButton.Text = "INDIETRO";
             this.lineBackwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -586,47 +779,33 @@ namespace STIRPARO
             this.lineBackwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lineBackwardButton_MouseDown);
             this.lineBackwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lineBackwardButton_MouseUp);
             // 
-            // lineForwardButton
+            // checkHomingTimer
             // 
-            this.lineForwardButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lineForwardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lineForwardButton.Image = ((System.Drawing.Image)(resources.GetObject("lineForwardButton.Image")));
-            this.lineForwardButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lineForwardButton.Location = new System.Drawing.Point(617, 17);
-            this.lineForwardButton.Name = "lineForwardButton";
-            this.lineForwardButton.Size = new System.Drawing.Size(100, 100);
-            this.lineForwardButton.TabIndex = 16;
-            this.lineForwardButton.Text = "AVANTI";
-            this.lineForwardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.lineForwardButton.UseVisualStyleBackColor = false;
-            this.lineForwardButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lineForwardButton_MouseDown);
-            this.lineForwardButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lineForwardButton_MouseUp);
+            this.checkHomingTimer.Interval = 1000;
+            this.checkHomingTimer.Tick += new System.EventHandler(this.checkHomingTimer_Tick);
             // 
-            // linePanel
+            // checkQuotaTimer
             // 
-            this.linePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.linePanel.Controls.Add(this.lineForwardButton);
-            this.linePanel.Controls.Add(this.lineVelUpDown);
-            this.linePanel.Controls.Add(this.lineBackwardButton);
-            this.linePanel.Enabled = false;
-            this.linePanel.Location = new System.Drawing.Point(586, 757);
-            this.linePanel.Name = "linePanel";
-            this.linePanel.Size = new System.Drawing.Size(763, 136);
-            this.linePanel.TabIndex = 19;
+            this.checkQuotaTimer.Tick += new System.EventHandler(this.checkQuotaTimer_Tick);
+            // 
+            // updateQuotaTimer
+            // 
+            this.updateQuotaTimer.Tick += new System.EventHandler(this.updateQuotaTimer_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.linePanel);
+            this.Controls.Add(this.autoPanel);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.modeLabel);
             this.Controls.Add(this.bottomPanel);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.switchAutoManualButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "IMPIANTO AUTOMATIZZATO TAGLIO LASER";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.flowLayoutPanel1.ResumeLayout(false);
             this.aspoPanel.ResumeLayout(false);
@@ -641,8 +820,13 @@ namespace STIRPARO
             this.shearPanel.ResumeLayout(false);
             this.shearPanel.PerformLayout();
             this.bottomPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.lineVelUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.autoPanel.ResumeLayout(false);
+            this.autoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sheetLengthUpDown)).EndInit();
             this.linePanel.ResumeLayout(false);
+            this.linePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lineVelUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,15 +866,29 @@ namespace STIRPARO
         private System.Windows.Forms.FlowLayoutPanel bottomPanel;
         private System.Windows.Forms.Button connectButton;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Button switchAutoManualButton;
         private System.Windows.Forms.Label aspoOverrideLabel;
         private System.Windows.Forms.Label straightenerOverrideLabel;
         private System.Windows.Forms.Label profilingOverrideLabel;
         private System.Windows.Forms.Label modeLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button switchAutoButton;
+        private System.Windows.Forms.Button switchManualButton;
+        private System.Windows.Forms.Panel autoPanel;
+        private System.Windows.Forms.Button homingButton;
+        private System.Windows.Forms.NumericUpDown sheetLengthUpDown;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Panel linePanel;
+        private System.Windows.Forms.Button lineForwardButton;
         private System.Windows.Forms.NumericUpDown lineVelUpDown;
         private System.Windows.Forms.Button lineBackwardButton;
-        private System.Windows.Forms.Button lineForwardButton;
-        private System.Windows.Forms.Panel linePanel;
+        private System.Windows.Forms.Timer checkHomingTimer;
+        private System.Windows.Forms.Button stopButton;
+        private System.Windows.Forms.Label sheetLengthLabel;
+        private System.Windows.Forms.Label lineOverrideLabel;
+        private System.Windows.Forms.Timer checkQuotaTimer;
+        private System.Windows.Forms.TextBox actualQuoteTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer updateQuotaTimer;
     }
 }
 
